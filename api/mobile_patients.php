@@ -40,12 +40,10 @@ if ($search !== '') {
 $sql  = "SELECT p.patient_id AS id, p.first_name, p.last_name, p.date_of_birth, p.gender,
                 p.primary_diagnosis, p.profile_image_url,
                 u.full_name AS facility_name,
-                MAX(vn.note_date) AS last_visit_date
+                (SELECT MAX(vn.note_date) FROM visit_notes vn WHERE vn.patient_id = p.patient_id) AS last_visit_date
          FROM patients p
          LEFT JOIN users u ON p.facility_id = u.user_id
-         LEFT JOIN visit_notes vn ON vn.patient_id = p.patient_id
          $where
-         GROUP BY p.patient_id
          ORDER BY p.last_name ASC
          LIMIT ? OFFSET ?";
 $params[] = $limit;
@@ -53,9 +51,18 @@ $params[] = $offset;
 $types   .= 'ii';
 
 $stmt = $conn->prepare($sql);
+if ($stmt === false) {
+    echo json_encode(['success' => false, 'message' => 'SQL prepare error: ' . $conn->error]);
+    exit;
+}
 if ($params) $stmt->bind_param($types, ...$params);
 $stmt->execute();
-$rows = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$result = $stmt->get_result();
+if ($result === false) {
+    echo json_encode(['success' => false, 'message' => 'SQL execute error: ' . $stmt->error]);
+    exit;
+}
+$rows = $result->fetch_all(MYSQLI_ASSOC);
 $stmt->close();
 
 echo json_encode(['success' => true, 'data' => $rows, 'count' => count($rows)]);
