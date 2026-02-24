@@ -112,77 +112,237 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Rate-limit goto target — execution continues here when brute-force limit is hit
 show_form:
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EC Wound Charting - Login</title>
+    <title>EC Wound Charting — Sign In</title>
     <link rel="shortcut icon" type="image/png" href="logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .login-bg {
-            background-image: url('https://image.pollinations.ai/prompt/Female%20doctor%20in%20blue%20scrubs%20using%20a%20holographic%20interface%20to%20examine%20a%20wound%20on%20a%20patient\'s%20leg%20in%20a%20modern%20clinic%20at%20night%2C%20futuristic%20medical%20equipment%2C%20glowing%20blue%20light%2C%20cityscape%20background%2C%20detailed%20holograms%2C%20high-tech%20wound%20care?width=1200&height=800&seed=44');
+
+        .panel-bg {
+            background-image: url('https://image.pollinations.ai/prompt/Female%20doctor%20in%20blue%20scrubs%20using%20a%20holographic%20interface%20to%20examine%20a%20wound%20on%20a%20patient%27s%20leg%20in%20a%20modern%20clinic%20at%20night%2C%20futuristic%20medical%20equipment%2C%20glowing%20blue%20light%2C%20cityscape%20background%2C%20detailed%20holograms%2C%20high-tech%20wound%20care?width=1200&height=800&seed=44');
             background-size: cover;
             background-position: center;
         }
+
+        .input-field {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 0.5rem;
+            background: #f8fafc;
+            color: #1e293b;
+            font-size: 0.9375rem;
+            transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+            outline: none;
+        }
+        .input-field:focus {
+            border-color: #3b82f6;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+        }
+        .input-field::placeholder { color: #94a3b8; }
+
+        .btn-primary {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8125rem 1rem;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
+            box-shadow: 0 4px 12px rgba(37,99,235,0.35);
+        }
+        .btn-primary:hover { opacity: 0.92; box-shadow: 0 6px 16px rgba(37,99,235,0.45); }
+        .btn-primary:active { transform: scale(0.99); }
+        .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            font-size: 0.8125rem;
+            padding: 0.3125rem 0.75rem;
+            border-radius: 9999px;
+            backdrop-filter: blur(4px);
+        }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-slate-100 min-h-screen flex">
 
-<div class="min-h-screen flex">
-    <div class="hidden lg:flex w-1/2 login-bg relative items-center justify-center">
-        <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
-        <div class="w-full max-w-md z-10 text-center relative">
-            <h1 class="text-5xl font-bold text-white tracking-wider">EC Wound Charting</h1>
-            <p class="text-gray-300 mt-4 text-lg">Advanced. Efficient. Patient-Centered.</p>
+    <!-- Left decorative panel (desktop only) -->
+    <div class="hidden lg:flex lg:w-1/2 panel-bg relative flex-col items-center justify-between py-14 px-12">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-blue-900/70 to-indigo-900/80"></div>
 
+        <!-- Top logo -->
+        <div class="relative z-10 self-start">
+            <img src="logo.png" alt="EC Logo" class="h-10 w-auto opacity-90">
         </div>
+
+        <!-- Center content -->
+        <div class="relative z-10 text-center">
+            <div class="flex justify-center gap-2 mb-6 flex-wrap">
+                <span class="badge"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> HIPAA Compliant</span>
+                <span class="badge"><i data-lucide="activity" class="w-3.5 h-3.5"></i> Real-Time Charting</span>
+                <span class="badge"><i data-lucide="cpu" class="w-3.5 h-3.5"></i> AI-Powered</span>
+            </div>
+            <h1 class="text-4xl font-bold text-white leading-tight tracking-tight">
+                EC Wound Charting
+            </h1>
+            <p class="text-blue-200 mt-3 text-lg font-light">Advanced. Efficient. Patient-Centered.</p>
+        </div>
+
+        <!-- Bottom tagline -->
+        <p class="relative z-10 text-blue-300/70 text-xs">
+            &copy; <?= date('Y') ?> EC Wound Charting. All rights reserved.
+        </p>
     </div>
 
-    <div class="w-full lg:w-1/2 flex items-center justify-center bg-white p-8">
-        <div class="w-full max-w-md">
-            <div class="text-center mb-10">
-                <img src="logo.png" alt="EC Wound Charting Logo" class="mx-auto h-24 w-auto">
+    <!-- Right login panel -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center bg-white p-6 sm:p-10">
+        <div class="w-full max-w-sm">
+
+            <!-- Mobile logo -->
+            <div class="flex justify-center mb-8 lg:hidden">
+                <img src="logo.png" alt="EC Wound Charting" class="h-16 w-auto">
             </div>
 
-            <div class="text-center lg:text-left mb-10">
-                <h2 class="text-3xl font-bold text-gray-800">Welcome Back</h2>
-                <p class="text-gray-600 mt-2">Please sign in to access your account.</p>
+            <!-- Heading -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Welcome back</h2>
+                <p class="text-slate-500 mt-1 text-sm">Sign in to your EC Wound Charting account.</p>
             </div>
 
+            <!-- Error alert -->
             <?php if (!empty($error_message)): ?>
-                <div class="mb-4 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md" role="alert">
-                    <p class="font-bold">Login Failed</p>
-                    <p><?php echo htmlspecialchars($error_message); ?></p>
+            <div class="mb-6 flex items-start gap-3 bg-red-50 border border-red-200 text-red-700 px-4 py-3.5 rounded-lg" role="alert">
+                <i data-lucide="alert-circle" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                <div>
+                    <p class="font-semibold text-sm">Sign-in failed</p>
+                    <p class="text-sm mt-0.5"><?= htmlspecialchars($error_message) ?></p>
                 </div>
+            </div>
             <?php endif; ?>
 
-            <form method="POST" action="login.php" class="mt-6">
+            <!-- Form -->
+            <form method="POST" action="login.php" id="loginForm" novalidate>
+
+                <!-- Email -->
                 <div class="mb-4">
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                    <input type="email" name="email" id="email" required
-                           class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">Email address</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </span>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            required
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                            value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>"
+                            class="input-field pl-10"
+                        >
+                    </div>
                 </div>
-                <div class="mb-6">
-                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                    <input type="password" name="password" id="password" required
-                           class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+
+                <!-- Password -->
+                <div class="mb-2">
+                    <label for="password" class="block text-sm font-medium text-slate-700 mb-1.5">Password</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                            <i data-lucide="lock" class="w-4 h-4"></i>
+                        </span>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            required
+                            autocomplete="current-password"
+                            placeholder="••••••••"
+                            class="input-field pl-10 pr-11"
+                        >
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 transition-colors"
+                            aria-label="Toggle password visibility"
+                        >
+                            <i data-lucide="eye" class="w-4 h-4" id="eyeIcon"></i>
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <button type="submit"
-                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
-                        Sign In
-                    </button>
+
+                <!-- Forgot password -->
+                <div class="flex justify-end mb-6">
+                    <a href="forgot_password.php" class="text-xs text-blue-600 hover:text-blue-800 hover:underline font-medium">
+                        Forgot password?
+                    </a>
                 </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-primary" id="submitBtn">
+                    <i data-lucide="log-in" class="w-4 h-4" id="btnIcon"></i>
+                    <span id="btnText">Sign In</span>
+                </button>
             </form>
+
+            <!-- Footer note -->
+            <p class="mt-8 text-center text-xs text-slate-400">
+                Having trouble? Contact your administrator.
+            </p>
         </div>
     </div>
-</div>
 
+<script>
+    lucide.createIcons();
+
+    // Password toggle
+    const toggleBtn = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('eyeIcon');
+
+    toggleBtn.addEventListener('click', () => {
+        const isHidden = passwordInput.type === 'password';
+        passwordInput.type = isHidden ? 'text' : 'password';
+        eyeIcon.setAttribute('data-lucide', isHidden ? 'eye-off' : 'eye');
+        lucide.createIcons();
+    });
+
+    // Loading state on submit
+    document.getElementById('loginForm').addEventListener('submit', function () {
+        const btn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnIcon = document.getElementById('btnIcon');
+        btn.disabled = true;
+        btnText.textContent = 'Signing in…';
+        btnIcon.setAttribute('data-lucide', 'loader');
+        btnIcon.style.animation = 'spin 1s linear infinite';
+        lucide.createIcons();
+    });
+</script>
+<style>
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
 </body>
 </html>
 
