@@ -48,8 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     // Appointments list
     $stmt = $conn->prepare(
-        "SELECT a.appointment_id, a.appointment_date, a.appointment_time,
-                a.reason_for_visit, a.status,
+        "SELECT a.appointment_id, a.appointment_date, a.appointment_type, a.status,
                 vn.note_id, vn.chief_complaint, vn.subjective, vn.objective,
                 vn.assessment, vn.plan
          FROM appointments a
