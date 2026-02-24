@@ -1,5 +1,4 @@
 ---
 deployment:
   tasks:
-    - /bin/find /home3/ecwound1/public_html/ec -type f -name "*.php" -exec chmod 644 {} \;
-    - /bin/find /home3/ecwound1/public_html/ec -type d -exec chmod 755 {} \;
+    - echo "EC Wound Charting deployed successfully from $(pwd)"
