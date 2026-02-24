@@ -51,13 +51,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         "SELECT a.appointment_id, a.appointment_date, a.appointment_time,
                 a.reason_for_visit, a.status,
                 vn.note_id, vn.chief_complaint, vn.subjective, vn.objective,
-                vn.assessment, vn.plan, vn.hpi, vn.ros
+                vn.assessment, vn.plan
          FROM appointments a
          LEFT JOIN visit_notes vn ON vn.appointment_id = a.appointment_id
          WHERE a.patient_id = ?
          ORDER BY a.appointment_date DESC
          LIMIT 30"
     );
+    if ($stmt === false) {
+        echo json_encode(['success' => false, 'message' => 'SQL error: ' . $conn->error]);
+        exit;
+    }
     $stmt->bind_param("i", $patient_id);
     $stmt->execute();
     $appointments = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -80,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $fields = ['chief_complaint', 'hpi', 'ros', 'subjective', 'objective', 'assessment', 'plan'];
+    $fields = ['chief_complaint', 'subjective', 'objective', 'assessment', 'plan'];
     $values = [];
     foreach ($fields as $f) {
         $values[$f] = isset($data[$f]) ? trim($data[$f]) : '';
@@ -90,22 +94,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare(
         "INSERT INTO visit_notes
              (patient_id, appointment_id, user_id, note_date,
-              chief_complaint, hpi, ros, subjective, objective, assessment, plan)
-         VALUES (?, ?, ?, CURDATE(), ?, ?, ?, ?, ?, ?, ?)
+              chief_complaint, subjective, objective, assessment, plan)
+         VALUES (?, ?, ?, CURDATE(), ?, ?, ?, ?, ?)
          ON DUPLICATE KEY UPDATE
               chief_complaint = VALUES(chief_complaint),
-              hpi             = VALUES(hpi),
-              ros             = VALUES(ros),
               subjective      = VALUES(subjective),
               objective       = VALUES(objective),
               assessment      = VALUES(assessment),
-              plan            = VALUES(plan),
-              updated_at      = NOW()"
+              plan            = VALUES(plan)"
     );
     $stmt->bind_param(
-        "iiissssss s",
+        "iiisssss",
         $patient_id, $appointment_id, $user_id,
-        $values['chief_complaint'], $values['hpi'], $values['ros'],
+        $values['chief_complaint'],
         $values['subjective'], $values['objective'],
         $values['assessment'], $values['plan']
     );
