@@ -1,0 +1,201 @@
+/* Clean Quick Insert Modal — css/quick_insert_modal_clean.css
+   Updated: supports per-section accent (border-left) and checked item border coloring.
+   Include this in the page head (or merge into your existing modal stylesheet).
+*/
+
+#checklistModal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.35);
+    z-index: 12000;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+#checklistModal.show { display: flex; }
+
+/* Dialog (vertical layout: header | body | footer) */
+#checklistModalDialog {
+    width: min(760px, 96%);
+    max-width: 760px;
+    max-height: 86vh;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 30px 60px rgba(2,6,23,0.32);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header row */
+#checklistModalHeader {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 18px;
+    border-bottom: 1px solid #eef2f7;
+}
+#checklistModalHeader .icon {
+    width:28px; height:28px; border-radius:6px; background:#eef2ff; display:flex; align-items:center; justify-content:center; color:#4f46e5;
+    font-weight:700;
+}
+#checklistModalHeader .modal-title {
+    font-size:16px;
+    font-weight:700;
+    color:#111827;
+}
+#checklistModalHeader .close-x {
+    margin-left:auto;
+    background:transparent;
+    border:none;
+    font-size:18px;
+    color:#6b7280;
+    cursor:pointer;
+}
+
+/* Body: scrollable */
+#checklistModalBody {
+    padding:18px;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* Section card
+   The left accent (border-left) is set by JS via inline style
+*/
+.section-card {
+    background: #f8fbff;
+    border-radius: 8px;
+    padding: 14px;
+    border: 1px solid rgba(99,102,241,0.06);
+    box-shadow: 0 2px 6px rgba(2,6,23,0.03);
+    /* default transparent accent; JS will set a colored border-left */
+    border-left: 6px solid transparent;
+}
+.section-card .section-header {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+.section-card .section-header .section-icon {
+    width:18px; height:18px; display:inline-flex; align-items:center; justify-content:center; color:#4f46e5;
+}
+.section-card .section-header .section-title {
+    font-weight:700;
+    color:#3730a3;
+    font-size:14px;
+    flex:1;
+}
+.section-card .section-header .section-action {
+    font-size:13px;
+    color:#6b7280;
+}
+
+/* thin separator under header */
+.section-card hr {
+    border: none;
+    border-top: 1px solid rgba(79,70,229,0.06);
+    margin: 10px 0;
+}
+
+/* grid of items (2 columns) */
+.section-items {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px 12px;
+}
+
+/* item row style (card-like) */
+.checklist-item-row {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 12px;
+    border-radius:8px;
+    background:#fff;
+    border: 1px solid #edf2f7;
+    cursor:pointer;
+    align-items:flex-start;
+    transition: transform 120ms ease, box-shadow 120ms ease, border-color 160ms ease;
+}
+.checklist-item-row:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(2,6,23,0.04);
+}
+
+/* checked style: JS sets inline borderColor to the section accent color,
+   but provide a fallback accent color here for visual consistency */
+.checklist-item-row[aria-checked="true"] {
+    border-color: rgba(79,70,229,0.12);
+    background: linear-gradient(90deg, rgba(79,70,229,0.03), #fff);
+}
+
+/* circular checkbox */
+.ci-checkbox {
+    width:18px;
+    height:18px;
+    min-width:18px;
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid #d1d5db;
+    background:#fff;
+    margin-top:2px;
+}
+.ci-checkbox svg { width:12px; height:12px; display:none; color:#fff; }
+.checklist-item-row[aria-checked="true"] .ci-checkbox {
+    background:#4f46e5; border-color:#4f46e5;
+}
+.checklist-item-row[aria-checked="true"] .ci-checkbox svg { display:block; }
+
+/* label */
+.ci-label {
+    font-size:13px;
+    color:#0f172a;
+    line-height:1.4;
+}
+
+/* Footer: sticky bottom */
+#checklistModalFooter {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:12px 18px;
+    border-top:1px solid #eef2f7;
+    background:#fff;
+    flex-shrink:0;
+}
+.btn {
+    padding:10px 14px;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+    border:1px solid transparent;
+}
+.btn.ghost {
+    background:#f3f4f6;
+    color:#374151;
+    border:1px solid #e6e6e6;
+}
+.btn.primary {
+    background:#5b21b6; /* deep violet */
+    color:#fff;
+    box-shadow: 0 10px 18px rgba(91,33,182,0.14);
+}
+
+/* small responsive behavior */
+@media (max-width:720px) {
+    #checklistModalDialog { width: min(680px, 96%); }
+    .section-items { grid-template-columns: 1fr; }
+}
+
+/* utility */
+.hidden { display:none !important; }

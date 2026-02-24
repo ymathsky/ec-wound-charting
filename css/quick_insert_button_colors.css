@@ -1,0 +1,92 @@
+/* quick_insert_button_colors.css
+   Adds colored styles for Quick Insert buttons.
+   - Scoped to .quick-insert-insert-wrap / .quick-insert-btn inserted by JS.
+   - Uses data-section attribute to apply per-section accent colors.
+   - Include this AFTER your main button styles (quick_insert_button.css).
+*/
+
+.quick-insert-insert-wrap { margin-bottom: 6px; display: block; }
+
+/* Base button look (keeps existing btn / btn-sm semantics but ensures consistent visuals) */
+.quick-insert-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;               /* slightly smaller than standard btn */
+    border-radius: 8px;
+    border: 1px solid rgba(16,24,40,0.08);
+    background: #f8fafc;             /* light default */
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .06s ease, box-shadow .12s ease, background .12s ease;
+    box-shadow: 0 6px 12px rgba(2,6,23,0.04);
+}
+
+/* Hover / active */
+.quick-insert-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(2,6,23,0.06); }
+
+/* When active (e.g., toggled) */
+.quick-insert-btn.active {
+    transform: none;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Per-section colors (adjust hexs to match your design tokens) */
+.quick-insert-btn[data-section="subjective"] {
+    background: linear-gradient(90deg,#7c3aed,#4f46e5);
+    color: #ffffff;
+    border-color: rgba(124,58,237,0.28);
+}
+.quick-insert-btn[data-section="objective"] {
+    background: linear-gradient(90deg,#10b981,#059669);
+    color: #ffffff;
+    border-color: rgba(6,95,70,0.20);
+}
+.quick-insert-btn[data-section="assessment"] {
+    background: linear-gradient(90deg,#f59e0b,#fb923c);
+    color: #08121a;
+    border-color: rgba(245,158,11,0.18);
+}
+.quick-insert-btn[data-section="plan"] {
+    background: linear-gradient(90deg,#2563eb,#1d4ed8);
+    color: #ffffff;
+    border-color: rgba(37,99,235,0.22);
+}
+
+/* Generic variants for other sections */
+.quick-insert-btn[data-section="chief_complaint"],
+.quick-insert-btn[data-section="cc"],
+.quick-insert-btn[data-section="hpi"] {
+    background: linear-gradient(90deg,#06b6d4,#0891b2);
+    color: #fff;
+    border-color: rgba(6,182,212,0.18);
+}
+
+/* Fallback if data-section not present */
+.quick-insert-btn:not([data-section]) {
+    background: #eef2ff;
+    color: #3730a3;
+    border-color: rgba(99,102,241,0.08);
+}
+
+/* Dark theme adjustments (if vn-dark is present) */
+.vn-dark .quick-insert-btn {
+    box-shadow: 0 6px 14px rgba(2,6,23,0.5);
+    border-color: rgba(255,255,255,0.04);
+}
+.vn-dark .quick-insert-btn:not([data-section]) {
+    background: rgba(255,255,255,0.02);
+    color: #e6eef6;
+}
+
+/* Icon-only compact variant (if you want small circular buttons) */
+.quick-insert-btn.icon-only {
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+    border-radius: 10px;
+}

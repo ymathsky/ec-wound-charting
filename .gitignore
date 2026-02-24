@@ -1,0 +1,27 @@
+﻿# === SECRETS & ENVIRONMENT ===
+.env
+config/service_account.json
+config/access_token.json
+
+# === DATABASE DUMPS (NEVER commit — contain real patient data) ===
+*.sql
+
+# === LOGS & DEBUG FILES ===
+error_log
+api/error_log
+api/debug_ai_response.txt
+api/debug_vertex_response.txt
+*.log
+
+# === USER UPLOADS (too large / not source code) ===
+uploads/
+
+# === OS / EDITOR JUNK ===
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+*.swp
+
+# Keep uploads folder structure (but not actual uploaded files)
+!uploads/.gitkeep
+!uploads/**/.gitkeep

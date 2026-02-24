@@ -1,0 +1,44 @@
+# --- Block sensitive files from direct web access ---
+<FilesMatch "(\.env|access_token\.json|service_account\.json|composer\.lock)$">
+    Require all denied
+</FilesMatch>
+
+# --- Block raw SQL dump files ---
+<FilesMatch "\.sql$">
+    Require all denied
+</FilesMatch>
+
+# --- Block debug/log/text output files ---
+<FilesMatch "\.(log|txt)$">
+    Require all denied
+</FilesMatch>
+
+# --- Block diagnostic and dev-only PHP scripts ---
+<FilesMatch "^(check_|fix_|list_|describe_|db_info|add_col|add_notes|add_live|compare_).*\.php$">
+    Require all denied
+</FilesMatch>
+
+# --- Prevent directory listing ---
+Options -Indexes
+
+<IfModule mod_headers.c>
+    # Allow the site to use the microphone/camera (user still needs to click Allow)
+    Header set Permissions-Policy "microphone=(self), camera=(self), geolocation=(self)"
+
+    # Security headers
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-XSS-Protection "1; mode=block"
+
+    php_value upload_max_filesize 64M
+    php_value post_max_size 64M
+    php_value memory_limit 256M
+    php_value max_execution_time 300
+
+</IfModule>
+
+# --- Redirect HTTP to HTTPS (uncomment when SSL is configured) ---
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]

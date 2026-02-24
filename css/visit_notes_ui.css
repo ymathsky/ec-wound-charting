@@ -1,0 +1,30 @@
+/* visit_notes_ui_override.css
+   Small UI tweak: add margin on patient name to avoid touching the left edge / sidebar.
+   Include this after your main visit_notes_ui.css (or merge the rules into that file).
+*/
+
+#vn-header .patient-title,
+#vn-header h1 {
+    /* Give breathing room from the left (tweak value to taste) */
+    margin-left: 14px;
+    padding-left: 0; /* ensure no double padding if parent already has padding */
+    /* Keep typography from being affected */
+    font-size: 18px;
+    line-height: 1.05;
+}
+
+/* If header has a small inline badge next to the name, nudge that too */
+#vn-header .sub-badge,
+#vn-header .small-badge,
+#vn-header .badge {
+    margin-left: 10px;
+}
+
+/* Responsive: on very small screens reduce the left margin to avoid crowding */
+@media (max-width: 640px) {
+    #vn-header .patient-title,
+    #vn-header h1 {
+        margin-left: 8px;
+        font-size: 16px; /* optional: keep name readable but compact */
+    }
+}

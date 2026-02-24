@@ -1,0 +1,2 @@
+2026-01-06 00:49:43 - Received audio. Length: 475668 Mime: audio/webm;codecs=opus
+2026-01-06 00:49:45 - Response: {"error":{"code":400,"message":"Please use a valid role: user, model.","status":"INVALID_ARGUMENT"}}

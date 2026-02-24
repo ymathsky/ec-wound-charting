@@ -1,0 +1,417 @@
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","status":"Active","onset":"2025-12-19","latest_measurements":null}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Buttock","type":"Other","status":"Active","onset":"2025-12-19","latest_measurements":null}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","status":"Active","onset":"2025-12-19","latest_measurements":null}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","status":"Active","onset":"2025-12-19","latest_measurements":null}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","onset":"2025-12-19","characteristics":{"length":"5.5 cm","width":"4.0 cm","depth":"0.7 cm","granulation_tissue":"70%","slough":"30%","eschar":"0%","drainage":"serosanguinous","periwound_erythema":"present","periwound_edema":"absent","periwound_maceration":"present at superior edge","tunneling":"not noted","undermining":"not noted","odor":"not noted","pain_level":"not recorded"}}
+WoundID: 34, AssessID: 308, ImgPath: uploads/patient_documents/ai_chat_21_1767798750_695e77de1ed01.jpg, UserWoundID: 34
+Linked Image! ID: 143
+Processing Wound: {"location":"Right Lateral Ankle","onset":"2025-12-19","characteristics":{"length":"To be measured","width":"To be measured","depth":"superficial","granulation_tissue":"10%","slough":"0%","eschar":"0%","epithelializing_tissue":"90%","drainage":"none","periwound_erythema":"absent","periwound_edema":"absent","periwound_maceration":"absent","tunneling":"not noted","undermining":"not noted","odor":"not noted","pain_level":"not recorded"}}
+WoundID: 35, AssessID: 309, ImgPath: uploads/patient_documents/ai_chat_21_1767798750_695e77de1ed01.jpg, UserWoundID: 34
+Skipping Image Link. ShouldLink: N
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","onset":"2025-12-19","pre_debridement_assessment":{"dimensions":"5.5 x 4.0 x 0.7 cm","tunneling":"No","undermining":"No","tissue_composition":"70% Granulation, 30% Slough","odor":"No","pain_level":"0\/10","drainage":"Serosanguinous, Moderate","periwound_skin":"Erythema present, Maceration noted at the superior edge"},"post_debridement_assessment":{"dimensions":"0 x 0 x 0 cm","tunneling":"No","undermining":"No","tissue_composition":"Not recorded","odor":"No","pain_level":"0\/10"}}
+WoundID: 34, AssessID: 306, ImgPath: uploads/patient_documents/ai_chat_21_1767798937_695e78997e8f6.jpg, UserWoundID: 35
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","onset":"2025-12-19","pre_debridement_assessment":{"dimensions":"0 x 0 x 0 cm","tunneling":"No","undermining":"No","tissue_composition":"Not recorded","odor":"No","pain_level":"0\/10"},"post_debridement_assessment":{"dimensions":"0 x 0 x 0 cm","tunneling":"No","undermining":"No","tissue_composition":"Not recorded","odor":"No","pain_level":"0\/10"}}
+WoundID: 35, AssessID: 307, ImgPath: uploads/patient_documents/ai_chat_21_1767798937_695e78997e8f6.jpg, UserWoundID: 35
+Linked Image! ID: 144
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","onset":"2025-12-19","pre_debridement_assessment":{"dimensions":"0 x 0 x 0 cm","tunneling":"No","undermining":"No","tissue_composition":"Not recorded","odor":"No","pain_level":"0\/10"},"post_debridement_assessment":{"dimensions":"0 x 0 x 0 cm","tunneling":"No","undermining":"No","tissue_composition":"Not recorded","odor":"No","pain_level":"0\/10"}}
+WoundID: 35, AssessID: 307, ImgPath: uploads/patient_documents/ai_chat_21_1767798937_695e78997e8f6.jpg, UserWoundID: 35
+Linked Image! ID: 145
+Processing Wound: {"location":"Right Buttock","type":"Other","onset":"2025-12-19","pre_debridement_assessment":{"dimensions":"0 x 0 x 0 cm","tunneling":"No","undermining":"No","tissue_composition":"Not recorded","odor":"No","pain_level":"0\/10"},"post_debridement_assessment":{"dimensions":"0 x 0 x 0 cm","tunneling":"No","undermining":"No","tissue_composition":"Not recorded","odor":"No","pain_level":"0\/10"}}
+WoundID: 34, AssessID: 306, ImgPath: uploads/patient_documents/ai_chat_21_1767798937_695e78997e8f6.jpg, UserWoundID: 35
+Skipping Image Link. ShouldLink: N
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","status":"Active","onset":"2025-12-19"}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","status":"Active","onset":"2025-12-19"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","onset":"2025-12-19","length":"5.5","width":"4.0","depth":"0.7","granulation":"70","slough":"30","eschar":"0","drainage":"serosanguinous","periwound":"erythema, maceration"}
+WoundID: 34, AssessID: 308, ImgPath: uploads/patient_documents/ai_chat_21_1767799313_695e7a1132cc3.jpg, UserWoundID: 35
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","onset":"2025-12-19","length":"7.0","width":"2.5","depth":null,"granulation":"40","slough":"0","eschar":"0","epithelial":"60","drainage":"scant serosanguinous","periwound":"erythema"}
+WoundID: 35, AssessID: 309, ImgPath: uploads/patient_documents/ai_chat_21_1767799313_695e7a1132cc3.jpg, UserWoundID: 35
+Linked Image! ID: 146
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","status":"Active","onset":"2025-12-19"}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Buttock","type":"Other","status":"Active","onset":"2025-12-19"}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","status":"Active","onset":"2025-12-19"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","status":"Active","onset":"2025-12-19"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","status":"Active","onset":"2025-12-19"}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Buttock","type":"Other","status":"Active","onset":"2025-12-19"}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","status":"Active","onset":"2025-12-19"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","status":"Active","onset":"2025-12-19"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema\/Macerated"}
+WoundID: 34, AssessID: 306, ImgPath: uploads/patient_documents/ai_chat_21_1767800101_695e7d25933c6.jpg, UserWoundID: 34
+Linked Image! ID: 147
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema"}
+WoundID: 35, AssessID: 307, ImgPath: uploads/patient_documents/ai_chat_21_1767800101_695e7d25933c6.jpg, UserWoundID: 34
+Skipping Image Link. ShouldLink: N
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema\/Macerated"}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":1.5,"width_cm":1,"depth_cm":0.3,"granulation_percent":10,"slough_percent":90,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema"}
+WoundID: 34, AssessID: 306, ImgPath: uploads/patient_documents/ai_chat_21_1767801244_695e819c2e7c4.jpg, UserWoundID: 34
+Linked Image! ID: 148
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema"}
+WoundID: 35, AssessID: 307, ImgPath: uploads/patient_documents/ai_chat_21_1767801244_695e819c2e7c4.jpg, UserWoundID: 34
+Skipping Image Link. ShouldLink: N
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":null,"debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":null,"width_cm":null,"depth_cm":null,"granulation_percent":null,"slough_percent":null,"eschar_percent":null,"pain_level":null,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":null,"debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved","procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema\/Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":"Scalpel","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":"None","debridement_implements":"None","debridement_tolerance":"Well tolerated","debridement_closure":"None","procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":"Scalpel","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Curet","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":"None","debridement_implements":"None","debridement_tolerance":"Well tolerated","debridement_closure":"None","procedure_notes":"None"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Mechanical","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":"None","debridement_implements":"None","debridement_tolerance":"None","debridement_closure":"None","procedure_notes":"None"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":"None","debridement_implements":"None","debridement_tolerance":"None","debridement_closure":"None","procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":"Scalpel","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Mechanical","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":"None","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"None"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":"None","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":"Scalpel","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema\/Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Mechanical","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":"None","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"None"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":"Scalpel","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure\/silver nitrate","procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema\/Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Mechanical","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":"None","debridement_implements":"None","debridement_tolerance":"None","debridement_closure":"None","procedure_notes":"None"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":"None","debridement_implements":"None","debridement_tolerance":"None","debridement_closure":"None","procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"None","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":"Scalpel","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Mechanical","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":"None","debridement_implements":"None","debridement_tolerance":"None","debridement_closure":"None","procedure_notes":"None"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":"None","debridement_implements":"None","debridement_tolerance":"None","debridement_closure":"None","procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":"Scalpel","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Debridement performed (Sharp). Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"LEFT LEG","type":"Pressure Ulcer","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"RIGHT ANTERIOR THIGH","type":"Pressure Injury (HAPU)","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"RIGHT BUTTOCK","type":"Other","assessment_type":"Pre-Debridement","length_cm":1.5,"width_cm":1,"depth_cm":0.3,"granulation_percent":10,"slough_percent":90,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Macerated","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 34, AssessID: 306, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"RIGHT BUTTOCK","type":"Other","assessment_type":"Post-Debridement","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serosanguinous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"RIGHT LATERAL ANKLE","type":"Other","assessment_type":"Pre-Debridement","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 307, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"RIGHT LATERAL ANKLE","type":"Other","assessment_type":"Post-Debridement","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"None"}
+WoundID: 35, AssessID: 309, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","assessment_type":"Post-Debridement","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema\/Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Mechanical","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","assessment_type":"Pre-Debridement","length_cm":2.5,"width_cm":1.5,"depth_cm":0.2,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"None"}
+WoundID: 35, AssessID: 307, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","type":"Other","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","type":"Other","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":"Sharp","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure\/silver nitrate","procedure_notes":"Debridement performed (Sharp). Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Buttock","type":"Other","assessment_type":"Pre-Debridement","length_cm":1.5,"width_cm":1,"depth_cm":0.3,"granulation_percent":10,"slough_percent":90,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":null,"debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 34, AssessID: 306, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"LEFT LEG","type":"Other","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: uploads/patient_documents/ai_chat_21_1767983125_696148156d2b0.jpg, UserWoundID: 49
+Linked Image! ID: 149
+Processing Wound: {"location":"RIGHT ANTERIOR THIGH","type":"Other","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"Debridement performed (Sharp). Debridement performed (Sharp). Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: uploads/patient_documents/ai_chat_21_1767983125_696148156d2b0.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"RIGHT BUTTOCK","type":"Other","assessment_type":"Post-Debridement","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serosanguinous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"Debridement performed (Mechanical). Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: uploads/patient_documents/ai_chat_21_1767983125_696148156d2b0.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"RIGHT LATERAL ANKLE","type":"Other","assessment_type":"PRE-DEBRIDEMENT","length_cm":2.5,"width_cm":1.5,"depth_cm":0.2,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"None"}
+WoundID: 35, AssessID: 307, ImgPath: uploads/patient_documents/ai_chat_21_1767983125_696148156d2b0.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"RIGHT LATERAL ANKLE","type":"Other","assessment_type":"POST-DEBRIDEMENT","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"None"}
+WoundID: 35, AssessID: 309, ImgPath: uploads/patient_documents/ai_chat_21_1767983125_696148156d2b0.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","assessment_type":"Post-Debridement","length_cm":5.5,"width_cm":4,"depth_cm":0.7,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Mechanical","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: uploads/patient_documents/ai_chat_21_1767983212_6961486c74077.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","assessment_type":"Post-Debridement","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 309, ImgPath: uploads/patient_documents/ai_chat_21_1767983212_6961486c74077.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"Left Leg","type":"Other","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: uploads/patient_documents/ai_chat_21_1767983212_6961486c74077.jpg, UserWoundID: 49
+Linked Image! ID: 150
+Processing Wound: {"location":"Right Anterior Thigh","type":"Other","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure\/silver nitrate","procedure_notes":"Debridement performed (Sharp). Debridement performed (Sharp). Debridement performed (Sharp). Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: uploads/patient_documents/ai_chat_21_1767983212_6961486c74077.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","assessment_type":"Post-Debridement","length_cm":5.5,"width_cm":4.5,"depth_cm":0.3,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Mechanical","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: uploads/patient_documents/ai_chat_21_1767983280_696148b090d55.jpg, UserWoundID: 50
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","assessment_type":"Pre-Debridement","length_cm":2.5,"width_cm":1.5,"depth_cm":0.2,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 307, ImgPath: uploads/patient_documents/ai_chat_21_1767983280_696148b090d55.jpg, UserWoundID: 50
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"Left Leg","type":"Other","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: uploads/patient_documents/ai_chat_21_1767983280_696148b090d55.jpg, UserWoundID: 50
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"Right Anterior Thigh","type":"Other","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure\/silver nitrate","procedure_notes":"Debridement performed (Sharp). Debridement performed (Sharp). Debridement performed (Sharp). Debridement performed (Sharp). Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: uploads/patient_documents/ai_chat_21_1767983280_696148b090d55.jpg, UserWoundID: 50
+Linked Image! ID: 151
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"RIGHT BUTTOCK","type":"OTHER","assessment_type":"POST-DEBRIDEMENT","length_cm":5.5,"width_cm":4.5,"depth_cm":0.3,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serosanguinous","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Mechanical","debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: uploads/patient_documents/ai_chat_21_1767985220_6961504477ed8.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"RIGHT LATERAL ANKLE","type":"OTHER","assessment_type":"PRE-DEBRIDEMENT","length_cm":2.5,"width_cm":1.5,"depth_cm":0.2,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"None"}
+WoundID: 35, AssessID: 307, ImgPath: uploads/patient_documents/ai_chat_21_1767985220_6961504477ed8.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"LEFT LEG","type":"OTHER","assessment_type":"POST-DEBRIDEMENT","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: uploads/patient_documents/ai_chat_21_1767985220_6961504477ed8.jpg, UserWoundID: 49
+Linked Image! ID: 152
+Processing Wound: {"location":"RIGHT ANTERIOR THIGH","type":"OTHER","assessment_type":"POST-DEBRIDEMENT","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":"Scalpel","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: uploads/patient_documents/ai_chat_21_1767985220_6961504477ed8.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"RIGHT LATERAL ANKLE","type":"OTHER","assessment_type":"PRE-DEBRIDEMENT","length_cm":2.5,"width_cm":1.5,"depth_cm":0.2,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"None"}
+WoundID: 35, AssessID: 307, ImgPath: uploads/patient_documents/ai_chat_21_1767985220_6961504477ed8.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","assessment_type":"Post-Debridement","length_cm":5.5,"width_cm":4.5,"depth_cm":0.3,"granulation_percent":70,"slough_percent":30,"eschar_percent":0,"pain_level":0,"drainage_amount":"Moderate","drainage_type":"Serosanguinous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema, Macerated","debridement_performed":"Yes","debridement_type":"Mechanical","debridement_implements":"Mechanical","debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"Mechanical debridement of necrotic tissue and biofilm performed."}
+WoundID: 34, AssessID: 308, ImgPath: uploads/patient_documents/ai_chat_21_1767987323_6961587b6aebd.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","assessment_type":"Post-Debridement","length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Scant","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Erythema","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"None"}
+WoundID: 35, AssessID: 309, ImgPath: uploads/patient_documents/ai_chat_21_1767987323_6961587b6aebd.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"Left Leg","type":"Other","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"New pressure ulcer noted; needs evaluation."}
+WoundID: 49, AssessID: 310, ImgPath: uploads/patient_documents/ai_chat_21_1767987323_6961587b6aebd.jpg, UserWoundID: 49
+Linked Image! ID: 153
+Processing Wound: {"location":"Right Anterior Thigh","type":"Other","assessment_type":"Post-Debridement","length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":0,"slough_percent":0,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"Debridement performed (Sharp). Debridement performed (Sharp). Debridement performed (Sharp). Debridement performed (Sharp). Debridement performed (Sharp). Sharp debridement of necrotic tissue performed."}
+WoundID: 50, AssessID: 311, ImgPath: uploads/patient_documents/ai_chat_21_1767987323_6961587b6aebd.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","assessment_type":"Pre-Debridement","length_cm":3,"width_cm":2,"depth_cm":0.3,"granulation_percent":60,"slough_percent":40,"eschar_percent":0,"pain_level":0,"drainage_amount":"Serous","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":"None"}
+WoundID: 35, AssessID: 307, ImgPath: uploads/patient_documents/ai_chat_21_1767987323_6961587b6aebd.jpg, UserWoundID: 49
+Skipping Image Link. ShouldLink: N
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Right Buttock","type":"Other","assessment_type":null,"length_cm":1.5,"width_cm":1,"depth_cm":0.3,"granulation_percent":null,"slough_percent":null,"eschar_percent":null,"pain_level":null,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 34, AssessID: 312, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Buttock","type":"Other","assessment_type":null,"length_cm":5.5,"width_cm":4.5,"depth_cm":0.3,"granulation_percent":null,"slough_percent":null,"eschar_percent":null,"pain_level":null,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 34, AssessID: 312, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","assessment_type":null,"length_cm":3,"width_cm":2,"depth_cm":0.3,"granulation_percent":null,"slough_percent":null,"eschar_percent":null,"pain_level":null,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 313, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Lateral Ankle","type":"Other","assessment_type":null,"length_cm":7.5,"width_cm":3,"depth_cm":0.5,"granulation_percent":null,"slough_percent":null,"eschar_percent":null,"pain_level":null,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 35, AssessID: 313, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Left Leg","type":"Other","assessment_type":null,"length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":null,"slough_percent":null,"eschar_percent":null,"pain_level":null,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"No","debridement_type":null,"debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 49, AssessID: 314, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+Processing Wound: {"location":"Right Anterior Thigh","type":"Other","assessment_type":null,"length_cm":0,"width_cm":0,"depth_cm":0,"granulation_percent":null,"slough_percent":null,"eschar_percent":null,"pain_level":null,"drainage_amount":null,"drainage_type":null,"tunneling_present":"No","undermining_present":"No","periwound_condition":null,"debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Sharp debridement of necrotic tissue was performed."}
+WoundID: 50, AssessID: 315, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Left Lower Leg","type":"Ulcer","assessment_type":"Post-Debridement","length_cm":3,"width_cm":2,"depth_cm":0.1,"granulation_percent":80,"slough_percent":50,"eschar_percent":0,"pain_level":4,"drainage_amount":"Moderate","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":"Scalpel","debridement_tolerance":"Well tolerated","debridement_closure":"Hemostasis achieved with pressure","procedure_notes":"Wound cleansed with normal saline, padded dry, and silver alginate applied. ABD pad and roll gauze used for dressing."}
+WoundID: 44, AssessID: 316, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y
+
+--- New Wound Save Batch ---
+Processing Wound: {"location":"Left Lower Leg","type":"Ulcer","assessment_type":"Post-Debridement","length_cm":3,"width_cm":2,"depth_cm":0.1,"granulation_percent":80,"slough_percent":50,"eschar_percent":0,"pain_level":4,"drainage_amount":"Moderate","drainage_type":"Serous","tunneling_present":"No","undermining_present":"No","periwound_condition":"Intact","debridement_performed":"Yes","debridement_type":"Sharp","debridement_implements":null,"debridement_tolerance":null,"debridement_closure":null,"procedure_notes":null}
+WoundID: 51, AssessID: 317, ImgPath: , UserWoundID: 0
+Skipping Image Link. ShouldLink: Y

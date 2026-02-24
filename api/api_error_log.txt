@@ -1,0 +1,542 @@
+[07-Nov-2025 02:13:18 America/Chicago] Bad Request: Missing or empty required field: clinician_id.
+[07-Nov-2025 02:13:45 America/Chicago] Bad Request: Missing or empty required field: clinician_id.
+[07-Nov-2025 02:48:23 America/Chicago] Bad Request: Missing or empty required field: clinician_id.
+[07-Nov-2025 02:48:51 America/Chicago] Bad Request: Missing or empty required field: clinician_id.
+[2025-11-16 12:48:56] Server error while saving note: Unknown column 'user_id' in 'field list'
+[2025-11-16 12:49:07] Server error while saving note: Unknown column 'user_id' in 'field list'
+[2025-11-16 12:52:05] Server error while saving note: Unknown column 'date_created' in 'field list'
+[2025-11-16 12:56:25] Server error while saving note: Cannot add or update a child row: a foreign key constraint fails (`ec_wound`.`visit_notes`, CONSTRAINT `fk_note_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL)
+[2025-11-16 12:57:41] Server error while saving note: Cannot add or update a child row: a foreign key constraint fails (`ec_wound`.`visit_notes`, CONSTRAINT `fk_note_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL)
+[2025-11-16 12:57:48] Server error while saving note: Cannot add or update a child row: a foreign key constraint fails (`ec_wound`.`visit_notes`, CONSTRAINT `fk_note_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL)
+[2025-11-16 12:59:28] Server error while saving note: Cannot add or update a child row: a foreign key constraint fails (`ec_wound`.`visit_notes`, CONSTRAINT `fk_note_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL)
+[2025-11-16 12:59:32] Server error while saving note: Cannot add or update a child row: a foreign key constraint fails (`ec_wound`.`visit_notes`, CONSTRAINT `fk_note_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL)
+[2025-11-16 13:05:17] Server error while saving note: Cannot add or update a child row: a foreign key constraint fails (`ec_wound`.`visit_notes`, CONSTRAINT `fk_note_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL)
+[2025-11-16 13:05:23] Server error while saving note: Cannot add or update a child row: a foreign key constraint fails (`ec_wound`.`visit_notes`, CONSTRAINT `fk_note_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE SET NULL)
+2025-11-23 14:27:48 - Unknown column 'a.id' in 'on clause'
+2025-11-23 14:27:53 - Unknown column 'a.id' in 'on clause'
+2025-11-23 14:30:36 - Unknown column 'a.id' in 'on clause'
+2025-11-26 10:11:45 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dasdsad, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-11-26 10:11:53 - Sending Message:
+Sender: 7, Recipient: 8
+Text: dasdsadasd, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-11-26 10:24:18 - Sending Message:
+Sender: 7, Recipient: 8
+Text: dasdasd, File: , Type: text
+Success: Message inserted into Room 7
+
+Exception: Invalid JSON input
+
+Exception: Invalid JSON input
+
+Exception: Invalid JSON input
+
+Exception: Invalid JSON input
+
+Exception: Invalid JSON input
+
+2025-11-26 12:56:47 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-11-26 12:57:23 - Sending Message:
+Sender: 7, Recipient: 11
+Text: dasdasd, File: , Type: text
+Success: Message inserted into Room 8
+
+2025-11-26 12:58:46 - Sending Message:
+Sender: 7, Recipient: 6
+Text: dasdasdasd, File: , Type: text
+Success: Message inserted into Room 9
+
+2025-11-26 13:01:37 - Sending Message:
+Sender: 7, Recipient: 6
+Text: dsaddasdsad, File: , Type: text
+Success: Message inserted into Room 9
+
+2025-11-26 13:01:44 - Sending Message:
+Sender: 7, Recipient: 6
+Text: dasdasdasd, File: , Type: text
+Success: Message inserted into Room 9
+
+2025-11-26 13:05:36 - Sending Message:
+Sender: 7, Recipient: 5
+Text: dasdasd, File: , Type: text
+Success: Message inserted into Room 2
+
+2025-12-02 09:24:31 - Sending Message:
+Sender: 7, Recipient: 8
+Text: https://meet.google.com/yhi-tepc-xox, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:39:44 - Sending Message:
+Sender: 7, Recipient: 8
+Text: dsadasd, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:40:38 - Sending Message:
+Sender: 7, Recipient: 8
+Text: dasdasd, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:49 - Sending Message:
+Sender: 7, Recipient: 8
+Text: dsadasd, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:50 - Sending Message:
+Sender: 7, Recipient: 8
+Text: dasdasd, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:51 - Sending Message:
+Sender: 7, Recipient: 8
+Text: das, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:51 - Sending Message:
+Sender: 7, Recipient: 8
+Text: as, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:51 - Sending Message:
+Sender: 7, Recipient: 8
+Text: sa, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:51 - Sending Message:
+Sender: 7, Recipient: 8
+Text: d, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:51 - Sending Message:
+Sender: 7, Recipient: 8
+Text: d, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:51 - Sending Message:
+Sender: 7, Recipient: 8
+Text: sad, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:52 - Sending Message:
+Sender: 7, Recipient: 8
+Text: as, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:52 - Sending Message:
+Sender: 7, Recipient: 8
+Text: d, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:52 - Sending Message:
+Sender: 7, Recipient: 8
+Text: d, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:52 - Sending Message:
+Sender: 7, Recipient: 8
+Text: asd, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:52 - Sending Message:
+Sender: 7, Recipient: 8
+Text: sa, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:52 - Sending Message:
+Sender: 7, Recipient: 8
+Text: d, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:53 - Sending Message:
+Sender: 7, Recipient: 8
+Text: d, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:53 - Sending Message:
+Sender: 7, Recipient: 8
+Text: as, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:53 - Sending Message:
+Sender: 7, Recipient: 8
+Text: as, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:53 - Sending Message:
+Sender: 7, Recipient: 8
+Text: d, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:53 - Sending Message:
+Sender: 7, Recipient: 8
+Text: asd, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:53 - Sending Message:
+Sender: 7, Recipient: 8
+Text: sad, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:54 - Sending Message:
+Sender: 7, Recipient: 8
+Text: as, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:54 - Sending Message:
+Sender: 7, Recipient: 8
+Text: as, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:54 - Sending Message:
+Sender: 7, Recipient: 8
+Text: d, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:54 - Sending Message:
+Sender: 7, Recipient: 8
+Text: ad, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:54 - Sending Message:
+Sender: 7, Recipient: 8
+Text: asd, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:54 - Sending Message:
+Sender: 7, Recipient: 8
+Text: as, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:55 - Sending Message:
+Sender: 7, Recipient: 8
+Text: dsa, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:55 - Sending Message:
+Sender: 7, Recipient: 8
+Text: d, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:55 - Sending Message:
+Sender: 7, Recipient: 8
+Text: asd, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:55 - Sending Message:
+Sender: 7, Recipient: 8
+Text: as, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:41:56 - Sending Message:
+Sender: 7, Recipient: 8
+Text: d, File: , Type: text
+Success: Message inserted into Room 7
+
+2025-12-02 09:53:16 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dasdasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:00:25 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dasdasdads, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:01:55 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dadsadasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:02:04 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dsadasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:02:16 - Sending Message:
+Sender: 16, Recipient: 7
+Text: jsdhaksdhashdlasdhasd;jasdjasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:03:01 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dasdsadasdasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:03:19 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dasdasdasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:03:24 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dasdasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:06:45 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dasdasdsadsadsadasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:06:48 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dasdasdasdasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:06:53 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dsadasdasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:11:06 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dasdas, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:11:24 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dsadasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:12:58 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dgsdgsdgsgdsgdad, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:13:37 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dsahdksadkasdkdhkjlasdhjashdasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:13:38 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dsadjk;as, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:13:39 - Sending Message:
+Sender: 16, Recipient: 7
+Text: djasdja;sdj'asdk'asd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:13:40 - Sending Message:
+Sender: 16, Recipient: 7
+Text: adkasdjk', File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:13:41 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dajdasdasd]a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:13:42 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dasjd;asjda, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:18:21 - Sending Message:
+Sender: 7, Recipient: 17
+Text: dsadasdasd, File: , Type: text
+Success: Message inserted into Room 5
+
+2025-12-02 10:18:28 - Sending Message:
+Sender: 16, Recipient: 18
+Text: dasdas, File: , Type: text
+Success: Message inserted into Room 10
+
+2025-12-02 10:18:44 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dasdsadasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:18:50 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dasdsadsad, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:18:54 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dasdaaaaaaaaaffffff, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:18:56 - Sending Message:
+Sender: 16, Recipient: 7
+Text: asssdadasdasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:21:17 - Sending Message:
+Sender: 16, Recipient: 7
+Text: ddddsadasdasdsadsad, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-02 10:21:24 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dasdsadsadsadasdasdsadasddasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:28 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dasdsadsad, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:38 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dsadsadsadasdasdasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:40 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dsadasdsadasd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:41 - Sending Message:
+Sender: 16, Recipient: 7
+Text: aa, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:42 - Sending Message:
+Sender: 16, Recipient: 7
+Text: dsa, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:42 - Sending Message:
+Sender: 16, Recipient: 7
+Text: d, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:45 - Sending Message:
+Sender: 16, Recipient: 7
+Text: asaaaaaa, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:46 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:47 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:47 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:47 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:47 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:47 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:48 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:48 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:48 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:48 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:48 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:48 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:49 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:49 - Sending Message:
+Sender: 16, Recipient: 7
+Text: a, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:24:49 - Sending Message:
+Sender: 16, Recipient: 7
+Text: aa, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:25:01 - Sending Message:
+Sender: 7, Recipient: 16
+Text: asdasdd, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-03 10:26:36 - Sending Message:
+Sender: 7, Recipient: 16
+Text: , File: uploads/chat_files/3c8e2e6341e0eed521915bedc75f49b0.jpg, Type: photo
+Success: Message inserted into Room 1
+
+2025-12-03 10:30:00 - Sending Message:
+Sender: 7, Recipient: 16
+Text: , File: uploads/chat_files/cbfa776d2a36a6a2dc526e3d020908ad.jpg, Type: photo
+Success: Message inserted into Room 1
+
+2025-12-03 10:30:00 - Sending Message:
+Sender: 7, Recipient: 16
+Text: , File: uploads/chat_files/71b5664481823f67dc7eadb902531a2a.jpg, Type: photo
+Success: Message inserted into Room 1
+
+2025-12-03 10:31:51 - Sending Message:
+Sender: 7, Recipient: 16
+Text: , File: uploads/chat_files/1133ead1ce278a4487c612fb4a930b19.docx, Type: file
+Success: Message inserted into Room 1
+
+2025-12-03 10:32:03 - Sending Message:
+Sender: 7, Recipient: 16
+Text: , File: uploads/chat_files/2881c642bc017d939233bef0796c5198.pdf, Type: file
+Success: Message inserted into Room 1
+
+2025-12-03 11:21:57 - Sending Message:
+Sender: 7, Recipient: 16
+Text: dasdasdsad, File: , Type: text
+Success: Message inserted into Room 1
+
+2025-12-05 12:39:33 - Sending Message:
+Sender: 7, Recipient: 8
+Text: pahingi ate ng copy ng visit notes ni ata ria at doc chris, File: , Type: text
+Success: Message inserted into Room 7
+
+2026-01-22 07:31:25 - Sending Message:
+Sender: 7, Recipient: 6
+Text: aaaa, File: , Type: text
+Success: Message inserted into Room 1
+
+2026-01-22 16:21:15 - Sending Message:
+Sender: 7, Recipient: 8
+Text: dsadsadasdasd, File: , Type: text
+Success: Message inserted into Room 2
+

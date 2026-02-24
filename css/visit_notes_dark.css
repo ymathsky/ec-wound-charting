@@ -1,0 +1,158 @@
+/* Dark theme fixes for Visit Notes — updated to restore readable text and remove the
+   problematic "inherit all" rule that made most text very faint.
+   Replace your existing css/visit_notes_dark_fix.css with this file and include
+   it after visit_notes_dark.css (or merge the rules).
+*/
+
+/* Color tokens for dark theme */
+.vn-dark {
+    --vn-text: #e6eef6;           /* primary readable text */
+    --vn-muted: #9aa4b2;          /* secondary text */
+    --vn-border-strong: rgba(255,255,255,0.06);
+    --vn-surface-2: #09121a;
+    --vn-accent: #4f46e5;
+}
+
+/* Remove the previous overly-broad rule that forced 'inherit' on everything.
+   Instead we explicitly set readable colors for the main containers and common
+   UI text elements so they can't be accidentally faded out by other rules. */
+
+/* Base: ensure page and app containers use primary text color */
+.vn-dark,
+.vn-dark body,
+.vn-dark .app,
+.vn-dark .vn-root {
+    color: var(--vn-text) !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Make sure headings, labels, and other typographic elements are visible */
+.vn-dark h1, .vn-dark h2, .vn-dark h3, .vn-dark h4, .vn-dark h5, .vn-dark h6,
+.vn-dark p, .vn-dark span, .vn-dark label, .vn-dark li, .vn-dark a,
+.vn-dark .card-title, .vn-dark .section-title, .vn-dark .panel h3,
+.vn-dark .panel h4, .vn-dark .patient-title {
+    color: var(--vn-text) !important;
+    opacity: 1 !important;
+}
+
+/* Quill editor content (most important) */
+.vn-dark .ql-container.ql-snow,
+.vn-dark .ql-editor {
+    background: #071221 !important;
+    color: var(--vn-text) !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Force paragraph/list item text to be readable */
+.vn-dark .ql-editor p,
+.vn-dark .ql-editor li,
+.vn-dark .ql-editor h1,
+.vn-dark .ql-editor h2,
+.vn-dark .ql-editor h3,
+.vn-dark .ql-editor h4,
+.vn-dark .ql-editor span {
+    color: var(--vn-text) !important;
+    opacity: 1 !important;
+}
+
+/* Placeholders */
+.vn-dark .ql-editor.ql-blank::before,
+.vn-dark .ql-editor [data-placeholder] {
+    color: rgba(230,238,246,0.45) !important;
+}
+
+/* Toolbar icons and buttons */
+.vn-dark .ql-toolbar.ql-snow {
+    background: #0b1320 !important;
+    border: 1px solid var(--vn-border-strong) !important;
+    color: var(--vn-muted) !important;
+}
+.vn-dark .ql-toolbar .ql-formats button,
+.vn-dark .ql-toolbar .ql-formats .ql-picker {
+    color: var(--vn-muted) !important;
+}
+.vn-dark .ql-toolbar .ql-formats button:hover,
+.vn-dark .ql-toolbar .ql-formats button.ql-active,
+.vn-dark .ql-toolbar .ql-formats .ql-picker.ql-expanded {
+    color: var(--vn-text) !important;
+    background: rgba(255,255,255,0.02) !important;
+}
+
+/* Ensure svg strokes/fills follow currentColor for visibility */
+.vn-dark svg, .vn-dark svg * {
+    stroke: currentColor !important;
+    fill: currentColor !important;
+    color: currentColor !important;
+}
+
+/* Editor container border/shadow */
+.vn-dark .quill-editor,
+.vn-dark .ql-container {
+    border: 1px solid var(--vn-border-strong) !important;
+    box-shadow: 0 8px 18px rgba(2,6,23,0.45) !important;
+}
+
+/* Cards & section titles */
+.vn-dark .section-card .section-title,
+.vn-dark .card .card-title,
+.vn-dark .panel h3,
+.vn-dark .panel h4 {
+    color: var(--vn-text) !important;
+}
+
+/* Right column checklist items & labels */
+.vn-dark .note-checklist,
+.vn-dark .note-checklist .item,
+.vn-dark .note-checklist .ci-label,
+.vn-dark .note-checklist .section-title {
+    color: var(--vn-text) !important;
+}
+
+/* Make buttons readable */
+.vn-dark .btn,
+.vn-dark button,
+.vn-dark .action-buttons button,
+.vn-dark .action-buttons a {
+    color: var(--vn-text) !important;
+}
+
+/* Make form input text readable */
+.vn-dark input, .vn-dark textarea, .vn-dark select {
+    color: var(--vn-text) !important;
+    background: #071224 !important;
+    border: 1px solid var(--vn-border-strong) !important;
+}
+
+/* Muted/secondary */
+.vn-dark .muted, .vn-dark .text-muted {
+    color: var(--vn-muted) !important;
+}
+
+/* Make sure small UI badges (step badge etc.) are visible */
+.vn-dark .badge, .vn-dark .small-badge, .vn-dark .sub-badge {
+    color: var(--vn-text) !important;
+    background: rgba(255,255,255,0.02) !important;
+    border: 1px solid rgba(255,255,255,0.02) !important;
+}
+
+/* Special-case patient-at-a-glance (right column) to ensure section values are legible */
+.vn-dark .patient-at-a-glance,
+.vn-dark .right-column-card,
+.vn-dark .patient-card {
+    background: #0f1724 !important;
+    color: var(--vn-text) !important;
+    border: 1px solid var(--vn-border-strong) !important;
+}
+
+/* Fix disabled/ghost-looking elements that became too faint */
+.vn-dark .ghost, .vn-dark .disabled, .vn-dark .is-muted {
+    opacity: 0.85 !important;
+    color: var(--vn-muted) !important;
+}
+
+/* Ensure inputs placeholders remain visible */
+.vn-dark ::placeholder { color: rgba(230,238,246,0.42) !important; }
+
+/* If needed, more targeted overrides can be added below for any remaining low-contrast elements */

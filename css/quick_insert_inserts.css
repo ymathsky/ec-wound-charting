@@ -1,0 +1,87 @@
+/* quick_insert_inserts.css
+   Tuning for inserted HTML produced by quick-insert:
+   - Adjusts category title sizing/spacing for compact, bold headings
+   - Tightens list spacing and list-item spacing for compact insertion
+   - Keeps readable line-height and small bottom margin so inserted content doesn't create large gaps
+*/
+
+.quick-inserted {
+    display: block;
+    margin: 0 0 8px 0;        /* small gap after a category block */
+    padding: 0;
+    line-height: 1.4;
+    color: #0f172a;           /* base text color */
+    font-family: inherit;
+}
+
+/* Category title - tuned to be bold but compact */
+.quick-inserted h4,
+.quick-inserted h4 strong {
+    margin: 0 0 6px 0;        /* small space under title */
+    padding: 0;
+    font-size: 15px;         /* tuned font-size */
+    line-height: 1.15;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* If the editor strips h4 styles, the <strong> ensures bold text is preserved.
+   The CSS above targets both h4 and h4 strong. */
+
+/* Lists: compact, small bottom margin, controlled indent */
+.quick-inserted ul {
+    margin: 0 0 8px 0;        /* small bottom margin after list */
+    padding-left: 1.15rem;    /* readable left indent */
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+/* List items: tighter spacing */
+.quick-inserted ul li {
+    margin: 0 0 6px 0;        /* small gap between items */
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.35;
+    color: #0f172a;
+}
+
+/* If an item contains HTML like <p>...</p>, normalize it so it doesn't add extra margins */
+.quick-inserted ul li p {
+    margin: 0;
+    padding: 0;
+    display: inline;          /* keep content compact inside li */
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Optional subtle divider between category blocks when multiple categories inserted */
+.quick-inserted + .quick-inserted {
+    margin-top: 10px;
+}
+
+/* Utility: provide a compact variant if you need to force even tighter spacing */
+.quick-inserted.compact {
+    margin-bottom: 6px;
+}
+.quick-inserted.compact h4 { font-size: 14px; margin-bottom: 4px; }
+.quick-inserted.compact ul li { margin-bottom: 4px; font-size: 13px; }
+
+/* Supplement for inserted content: make Quill H4 lines look larger and bold */
+.ql-editor h4 {
+    font-size: 15px;
+    margin: 0 0 6px 0;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #111827;
+}
+
+/* fallback for strong inside p if header was not applied */
+.ql-editor p strong {
+    font-weight: 700;
+}
+
+/* keep lists compact */
+.ql-editor .quick-inserted ul {
+    margin: 0 0 8px 0;
+    padding-left: 1.15rem;
+}

@@ -1,0 +1,637 @@
+/* Filename: ec/patient_portal/css/portal.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #4F46E5;
+    --primary-hover: #4338CA;
+    --primary-light: #EEF2FF;
+    --secondary: #64748B;
+    --bg-body: #F3F4F6;
+    --bg-card: #FFFFFF;
+    --text-main: #111827;
+    --text-muted: #6B7280;
+    --border-color: #E5E7EB;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --radius: 0.75rem;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --sidebar-width: 280px; /* Define sidebar width for desktop offset */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* --- Utility --- */
+.hidden { display: none !important; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+.text-gray-500 { color: var(--text-muted); }
+.text-indigo-600 { color: var(--primary); }
+
+/* --- Login Page --- */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+}
+
+.login-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 420px;
+    transition: transform 0.3s ease;
+}
+
+/* --- Header & Unified Layout (NEW) --- */
+.portal-header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand-logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.025em;
+}
+
+.logout-link {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.logout-link:hover {
+    background-color: white;
+    color: var(--danger);
+    border-color: #FECACA;
+}
+
+/* Base Layout for pages with Nav Panel */
+.page-wrapper {
+    /* REMOVED: display: flex; */
+    min-height: 100vh;
+    padding-top: 54px; /* Height of the sticky mobile header */
+}
+
+@media (min-width: 768px) {
+    .page-wrapper {
+        padding-top: 0;
+    }
+}
+
+/* Nav Panel */
+.fixed-nav-panel {
+    position: fixed;
+    top: 54px; /* Below mobile header */
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 54px);
+    background: white;
+    box-shadow: var(--shadow-lg);
+    z-index: 50;
+    padding: 0.5rem 1rem 70px 1rem; /* Adjusted vertical padding for new fixed bottom section */
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    border-right: 1px solid var(--border-color);
+}
+
+.fixed-nav-panel.nav-open {
+    transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+    .fixed-nav-panel {
+        position: fixed; /* Fixed for true overlap/margin offset */
+        top: 54px;
+        height: 100vh;
+        transform: translateX(0);
+        width: var(--sidebar-width); /* Use CSS variable */
+        padding-top: 0; /* Title is now inside, so no top padding needed */
+        padding-bottom: 70px; /* Space for fixed bottom user section */
+        box-shadow: var(--shadow-md);
+        border-right: none;
+    }
+}
+
+.nav-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    /* On desktop, container takes up the remaining height and becomes scrollable */
+    height: 100%;
+    overflow-y: auto;
+    padding: 1rem 0; /* Padding inside the scrollable area */
+}
+
+.nav-link {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    background-color: var(--primary-light);
+    color: var(--primary);
+}
+
+.nav-active {
+    background-color: var(--primary);
+    color: white !important;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-active:hover {
+    background-color: var(--primary-hover);
+    color: white !important;
+}
+
+.nav-separator {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 0.75rem 0;
+}
+
+.nav-logout {
+    /* Styles for mobile logout link */
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+}
+
+/* Desktop layout adjustment to make space for the fixed sidebar */
+@media (min-width: 768px) {
+    .main-content {
+        margin-left: var(--sidebar-width); /* Push content past the fixed sidebar */
+        min-height: 100vh; /* Ensure it takes full viewport height */
+    }
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Adjusted Padding for better spacing based on user feedback */
+    padding: 3rem 2rem; /* Increased top/bottom padding to 3rem (48px) */
+}
+
+/* --- Welcome Banner (Dashboard Only) --- */
+.welcome-banner {
+    background: linear-gradient(120deg, #4F46E5 0%, #818CF8 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-banner::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* --- Sections --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Redefine the dashboard grid for the new 3-column summary layout */
+@media (min-width: 768px) {
+    .dashboard-grid.summary-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+}
+
+/* --- Cards --- */
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-base {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.card-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: #C7D2FE;
+    cursor: pointer;
+}
+
+/* --- Next Appointment Box --- */
+.appt-box {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    background-color: #EFF6FF; /* blue-50 */
+    border-radius: var(--radius);
+    border: 1px solid #BFDBFE;
+}
+
+.appt-date {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    min-width: 70px;
+    box-shadow: var(--shadow-sm);
+    margin-right: 1.25rem;
+    border: 1px solid #E5E7EB;
+}
+
+.appt-day { font-size: 1.5rem; font-weight: 800; line-height: 1; color: var(--primary); }
+.appt-month { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted); }
+
+/* --- Quick Links (Keep styles, but structure is removed from index.php) --- */
+.quick-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+.link-card:hover {
+    border-color: var(--primary);
+    background-color: #FAFAFA;
+    box-shadow: var(--shadow-sm);
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0; /* Added to prevent shrinking */
+}
+
+.icon-circle-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-indigo-light { background-color: #EEF2FF; color: #4F46E5; }
+.bg-gray-light { background-color: #F3F4F6; color: #6B7280; }
+.bg-brand-light { background-color: #EEF2FF; color: #4F46E5; } /* Alias for indigo-light for consistency */
+
+/* --- Wounds Grid --- */
+.wound-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .wound-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+.wound-item {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s; /* Added more transition */
+}
+
+.wound-item:hover {
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05); /* Shadow with primary color tint */
+    border-color: var(--primary); /* Highlight border on hover */
+}
+
+.wound-img-container {
+    height: 180px;
+    background-color: #F3F4F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.wound-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wound-info {
+    padding: 1rem;
+    position: relative; /* Needed for absolute badge positioning */
+}
+
+/* Status Badge Styles Enhancement */
+.status-badge {
+    padding: 0.35rem 0.9rem;
+    font-size: 0.75rem; /* Increased font size */
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    letter-spacing: 0.05em;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for lift */
+}
+
+.status-active {
+    background-color: #FEF2F2;
+    color: #DC2626; /* Text Red */
+    border: 1px solid #FCA5A5; /* Border Red */
+}
+
+.status-healed {
+    background-color: #ECFDF5;
+    color: #059669; /* Text Green */
+    border: 1px solid #6EE7B7; /* Border Green */
+}
+
+/* --- Latest Care Note --- */
+.care-note-card {
+    background: #F0FDF4; /* green-50 */
+    border: 1px solid #BBF7D0;
+    border-left: 4px solid #22C55E;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.prose {
+    color: #374151;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* --- Form Elements --- */
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.5rem;
+    margin-top: 0.375rem;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: white; /* Ensure consistent background */
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* Increased focus shadow opacity */
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s; /* Added box-shadow transition */
+    font-size: 0.95rem;
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2); /* Added subtle shadow for lift */
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 6px 10px rgba(79, 70, 229, 0.3); /* Lift shadow slightly on hover */
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2); /* Reduce shadow on press */
+}
+
+.btn-base {
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-lg);
+    padding: 1.5rem;
+    max-width: 480px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* --- Appointments Page Specific Styles (NEW) --- */
+.tab-button {
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 0.375rem 0.375rem 0 0;
+}
+
+.tab-button:hover {
+    color: var(--primary-hover);
+    background-color: var(--primary-light);
+}
+
+.tab-button.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+    background-color: var(--bg-card); /* Keep background white when active */
+}
+
+/* Appointment Table Styles */
+.appointment-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.appointment-table th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    background-color: #F8F9FA; /* Light grey header */
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.appointment-table td {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.appointment-table tbody tr:hover {
+    background-color: #FAFAFA;
+}
+
+/* Responsive Table Adjustments */
+/* Hide Provider column on smaller screens */
+@media (max-width: 767px) {
+    .appointment-table th:nth-child(3),
+    .appointment-table td:nth-child(3) {
+        display: none;
+    }
+}
+
+/* Style for inline status badge inside table */
+.table-status-badge {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.7rem;
+    border: 1px solid transparent;
+}
+
+.table-status-Pending {
+    background-color: var(--warning);
+    color: white;
+    border-color: #EAB308;
+}
+.table-status-Scheduled, .table-status-Confirmed, .table-status-Checked-in {
+    background-color: var(--primary);
+    color: white;
+    border-color: #4F46E5;
+}
+.table-status-Completed {
+    background-color: var(--success);
+    color: white;
+    border-color: #10B981;
+}
+.table-status-Cancelled, .table-status-No-show, .table-status-On-Hold {
+    background-color: var(--danger);
+    color: white;
+    border-color: #EF4444;
+}

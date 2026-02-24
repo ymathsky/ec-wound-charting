@@ -1,0 +1,48 @@
+2025-12-09 01:56:09 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:56:13 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:56:24 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:57:32 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:57:36 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:57:38 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:57:40 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:57:42 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:57:44 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:57:47 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:57:48 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:57:50 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:57:51 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-09 01:58:53 Error (2): Undefined array key "temperature_f" in C:\xampp\htdocs\ec\api\ai_companion.php:97
+2025-12-12 14:35:50 Error (8192): mb_convert_encoding(): Handling HTML entities via mbstring is deprecated; use htmlspecialchars, htmlentities, or mb_encode_numericentity/mb_decode_numericentity instead in C:\xampp\htdocs\ec\api\ai_companion.php:121
+2025-12-12 14:35:55 Error (8192): mb_convert_encoding(): Handling HTML entities via mbstring is deprecated; use htmlspecialchars, htmlentities, or mb_encode_numericentity/mb_decode_numericentity instead in C:\xampp\htdocs\ec\api\ai_companion.php:121
+2025-12-12 14:37:50 Error (8192): mb_convert_encoding(): Handling HTML entities via mbstring is deprecated; use htmlspecialchars, htmlentities, or mb_encode_numericentity/mb_decode_numericentity instead in C:\xampp\htdocs\ec\api\ai_companion.php:121
+2025-12-15 16:41:19 Error (2): Undefined variable $system_instruction in C:\xampp\htdocs\ec\api\ai_companion.php:1243
+2025-12-15 16:41:42 Error (2): Undefined variable $system_instruction in C:\xampp\htdocs\ec\api\ai_companion.php:1243
+2025-12-15 16:41:53 Error (2): Undefined variable $system_instruction in C:\xampp\htdocs\ec\api\ai_companion.php:1243
+2025-12-15 16:45:30 Error (2): Array to string conversion in C:\xampp\htdocs\ec\api\ai_companion.php:641
+2025-12-16 03:56:28 Error (2): Array to string conversion in C:\xampp\htdocs\ec\api\ai_companion.php:662
+2025-12-16 03:57:08 Error (2): Array to string conversion in C:\xampp\htdocs\ec\api\ai_companion.php:662
+2025-12-18 11:52:15 Error (8192): substr(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ec\api\ai_companion.php:557
+2025-12-18 11:52:15 Error (8192): substr(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ec\api\ai_companion.php:558
+2025-12-18 11:52:15 Error (8192): substr(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ec\api\ai_companion.php:559
+2025-12-22 09:18:52 Fatal Error: Uncaught Error: Call to a member function bind_param() on bool in C:\xampp\htdocs\ec\api\ai_companion.php:216
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\ec\api\ai_companion.php:216
+2025-12-22 09:18:54 Fatal Error: Uncaught Error: Call to a member function bind_param() on bool in C:\xampp\htdocs\ec\api\ai_companion.php:216
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\ec\api\ai_companion.php:216
+2025-12-22 09:26:19 Fatal Error: Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\ec\api\ai_companion.php:273
+Stack trace:
+#0 C:\xampp\htdocs\ec\api\ai_companion.php(273): mysqli_stmt->bind_param('iiddddsiidi', 3, 104, NULL, 81.65, NULL, '120/80', 60, NULL, '37.5', NULL)
+#1 {main}
+  thrown in C:\xampp\htdocs\ec\api\ai_companion.php:273
+2025-12-22 12:05:35 Error (2): Undefined variable $extracted in C:\xampp\htdocs\ec\api\ai_companion.php:1954
+2026-01-06 23:03:46 Fatal Error: Uncaught Error: Call to a member function bind_param() on bool in C:\xampp\htdocs\ec\api\ai_companion.php:1382
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\ec\api\ai_companion.php:1382
+2026-01-06 23:06:27 Fatal Error: Uncaught Error: Call to a member function bind_param() on bool in C:\xampp\htdocs\ec\api\ai_companion.php:1461
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\ec\api\ai_companion.php:1461
