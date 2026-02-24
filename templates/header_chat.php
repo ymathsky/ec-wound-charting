@@ -55,17 +55,17 @@ if ($is_production) {
     // --- PRODUCTION (LIVE) CONFIG ---
     $firebase_config_json = __firebase_config;
 } else {
-    // --- LOCAL (XAMPP) CONFIG ---
-    // Use the hardcoded config object you provided.
-    $firebase_config_json = '{
-        "apiKey": "AIzaSyA7h9sK3B9p16BYU-gDvWdVxaVGjRuDUx0",
-        "authDomain": "ec-wound-charting.firebaseapp.com",
-        "projectId": "ec-wound-charting",
-        "storageBucket": "ec-wound-charting.firebasestorage.app",
-        "messagingSenderId": "1006211897893",
-        "appId": "1:1006211897893:web:bbeedba694e943fcdd3dcc",
-        "measurementId": "G-9B9D7F1B4T"
-    }';
+    // --- LOCAL / FALLBACK CONFIG ---
+    // Loaded from .env via db_connect.php's loadEnv() — never hardcoded.
+    $firebase_config_json = json_encode([
+        'apiKey'            => getenv('FIREBASE_API_KEY'),
+        'authDomain'        => getenv('FIREBASE_AUTH_DOMAIN'),
+        'projectId'         => getenv('FIREBASE_PROJECT_ID'),
+        'storageBucket'     => getenv('FIREBASE_STORAGE_BUCKET'),
+        'messagingSenderId' => getenv('FIREBASE_MESSAGING_SENDER_ID'),
+        'appId'             => getenv('FIREBASE_APP_ID'),
+        'measurementId'     => getenv('FIREBASE_MEASUREMENT_ID'),
+    ]);
 }
 
 // --- 2. Get App ID ---
