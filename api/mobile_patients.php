@@ -18,7 +18,7 @@ $search  = trim($_GET['search'] ?? '');
 $limit   = min(intval($_GET['limit'] ?? 50), 100);
 $offset  = intval($_GET['offset'] ?? 0);
 
-$where  = "WHERE p.status = 'active'";
+$where  = "WHERE 1=1";
 $params = [];
 $types  = '';
 
@@ -37,11 +37,13 @@ if ($search !== '') {
     $types   .= 'sss';
 }
 
-$sql  = "SELECT p.patient_id, p.first_name, p.last_name, p.date_of_birth, p.gender,
+$sql  = "SELECT p.patient_id AS id, p.first_name, p.last_name, p.date_of_birth, p.gender,
                 p.primary_diagnosis, p.profile_image_url,
-                MAX(a.appointment_date) AS last_visit
+                u.full_name AS facility_name,
+                MAX(vn.note_date) AS last_visit_date
          FROM patients p
-         LEFT JOIN appointments a ON a.patient_id = p.patient_id AND a.status = 'completed'
+         LEFT JOIN users u ON p.facility_id = u.user_id
+         LEFT JOIN visit_notes vn ON vn.patient_id = p.patient_id
          $where
          GROUP BY p.patient_id
          ORDER BY p.last_name ASC
