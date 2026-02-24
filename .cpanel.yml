@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home3/ecwound1/public_html/ec
+    - /bin/find $DEPLOYPATH -type f -name "*.php" -exec chmod 644 {} \;
+    - /bin/find $DEPLOYPATH -type d -exec chmod 755 {} \;
+    - /bin/find $DEPLOYPATH/uploads -type d -exec chmod 755 {} \; 2>/dev/null || true
