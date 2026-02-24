@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $stmt = $conn->prepare(
         "SELECT a.appointment_id, a.appointment_date, a.appointment_type, a.status,
                 vn.note_id, vn.chief_complaint, vn.subjective, vn.objective,
-                vn.assessment, vn.plan
+                vn.assessment, vn.plan, vn.is_signed, vn.signed_at, vn.status AS note_status
          FROM appointments a
          LEFT JOIN visit_notes vn ON vn.appointment_id = a.appointment_id
          WHERE a.patient_id = ?
@@ -78,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 // ── POST ──────────────────────────────────────────────────────────────────────
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data           = json_decode(file_get_contents('php://input'), true);
+    $action         = $data['action'] ?? 'save';
     $patient_id     = intval($data['patient_id'] ?? 0);
     $appointment_id = intval($data['appointment_id'] ?? 0);
 
@@ -87,6 +88,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    // ── Sign action ──────────────────────────────────────────────────────────
+    if ($action === 'sign') {
+        $stmt = $conn->prepare(
+            "UPDATE visit_notes
+             SET is_signed = 1, signed_at = NOW(), status = 'finalized',
+                 finalized_at = NOW(), finalized_by = ?
+             WHERE appointment_id = ? AND patient_id = ?"
+        );
+        if ($stmt === false) {
+            echo json_encode(['success' => false, 'message' => 'SQL error: ' . $conn->error]);
+            exit;
+        }
+        $stmt->bind_param("iii", $user_id, $appointment_id, $patient_id);
+        if ($stmt->execute() && $stmt->affected_rows > 0) {
+            echo json_encode(['success' => true, 'message' => 'Note signed and finalized.']);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'No note found to sign. Save the note first.']);
+        }
+        $stmt->close();
+        exit;
+    }
+
+    // ── Save action ──────────────────────────────────────────────────────────
     $fields = ['chief_complaint', 'subjective', 'objective', 'assessment', 'plan'];
     $values = [];
     foreach ($fields as $f) {
@@ -115,7 +139,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     if ($stmt->execute()) {
-        echo json_encode(['success' => true, 'message' => 'Visit note saved.', 'note_id' => $conn->insert_id ?: null]);
+        $note_id = $conn->insert_id ?: null;
+        // Mark appointment as Completed when a note is saved
+        $conn->query("UPDATE appointments SET status = 'Completed' WHERE appointment_id = $appointment_id AND status IN ('Scheduled','Confirmed','Checked-in')");
+        echo json_encode(['success' => true, 'message' => 'Visit note saved.', 'note_id' => $note_id]);
     } else {
         error_log('mobile_visits save error: ' . $stmt->error);
         http_response_code(500);
