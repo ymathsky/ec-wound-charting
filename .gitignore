@@ -25,3 +25,8 @@ Thumbs.db
 # Keep uploads folder structure (but not actual uploaded files)
 !uploads/.gitkeep
 !uploads/**/.gitkeep
+
+# === PRODUCTION SECRETS (NEVER commit) ===
+.env.production
+.vscode/
+*.bak
