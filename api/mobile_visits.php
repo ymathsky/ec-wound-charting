@@ -26,6 +26,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         exit;
     }
 
+    // Patient info
+    $stmt = $conn->prepare(
+        "SELECT p.patient_id AS id, p.first_name, p.last_name, p.date_of_birth, p.gender,
+                p.contact_number, p.allergies, p.past_medical_history,
+                p.insurance_provider, p.insurance_policy_number,
+                u.full_name AS facility_name
+         FROM patients p
+         LEFT JOIN users u ON p.facility_id = u.user_id
+         WHERE p.patient_id = ?"
+    );
+    $stmt->bind_param("i", $patient_id);
+    $stmt->execute();
+    $patient = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+
+    if (!$patient) {
+        echo json_encode(['success' => false, 'message' => 'Patient not found.']);
+        exit;
+    }
+
     // Appointments list
     $stmt = $conn->prepare(
         "SELECT a.appointment_id, a.appointment_date, a.appointment_time,
@@ -43,7 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $appointments = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     $stmt->close();
 
-    echo json_encode(['success' => true, 'data' => $appointments]);
+    $patient['visits'] = $appointments;
+    echo json_encode(['success' => true, 'data' => $patient]);
     exit;
 }
 
