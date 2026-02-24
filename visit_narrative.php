@@ -491,233 +491,260 @@ $stmt_d->close();
 </div>
 
 <!-- Review Modal -->
-<div id="review-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center overflow-y-auto p-4">
-    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-5xl flex flex-col max-h-[90vh] overflow-hidden animate-in fade-in zoom-in duration-200">
+<div id="review-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center overflow-y-auto p-4">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-5xl flex flex-col max-h-[92vh] overflow-hidden">
+
         <!-- Header -->
-        <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-white">
-            <div>
-                <h2 class="text-xl font-bold text-gray-800 flex items-center">
-                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-3 text-indigo-600">
-                        <i data-lucide="check-circle" class="w-5 h-5"></i>
-                    </div>
-                    Review AI Extraction
-                </h2>
-                <p class="text-sm text-gray-500 ml-11">Verify and edit the structured data before saving.</p>
+        <div class="px-7 py-5 flex justify-between items-center border-b border-slate-100">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center shadow-md shadow-indigo-200 flex-shrink-0">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-white"></i>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-slate-800 leading-tight">Review AI Extraction</h2>
+                    <p class="text-xs text-slate-400 mt-0.5">Verify and edit the structured data before saving to chart.</p>
+                </div>
             </div>
-            <button id="close-review-btn" class="text-gray-400 hover:text-gray-600 hover:bg-gray-100 p-2 rounded-full transition-colors">
+            <button id="close-review-btn" class="text-slate-400 hover:text-slate-600 hover:bg-slate-100 p-2 rounded-lg transition-colors">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
         </div>
 
         <!-- Tabs Navigation -->
-        <div class="flex border-b border-gray-200 bg-gray-50/50 px-6 pt-2">
-            <button class="review-tab-btn px-6 py-3 text-sm font-medium text-indigo-600 border-b-2 border-indigo-600 focus:outline-none transition-colors hover:bg-gray-100 rounded-t-lg" data-target="tab-soap">
-                SOAP Note
+        <div class="flex gap-1 px-7 pt-4 pb-0 bg-white border-b border-slate-100">
+            <button class="review-tab-btn flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-indigo-600 border-b-2 border-indigo-600 focus:outline-none transition-all rounded-t-lg -mb-px" data-target="tab-soap">
+                <i data-lucide="file-text" class="w-4 h-4"></i> SOAP Note
             </button>
-            <button class="review-tab-btn px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 focus:outline-none transition-colors hover:bg-gray-100 rounded-t-lg" data-target="tab-clinical">
-                Clinical Data
+            <button class="review-tab-btn flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-slate-500 hover:text-slate-700 border-b-2 border-transparent focus:outline-none transition-all rounded-t-lg -mb-px hover:bg-slate-50" data-target="tab-clinical">
+                <i data-lucide="activity" class="w-4 h-4"></i> Clinical Data
             </button>
-            <button class="review-tab-btn px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 focus:outline-none transition-colors hover:bg-gray-100 rounded-t-lg" data-target="tab-wounds">
-                Wounds & Procedures
+            <button class="review-tab-btn flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-slate-500 hover:text-slate-700 border-b-2 border-transparent focus:outline-none transition-all rounded-t-lg -mb-px hover:bg-slate-50" data-target="tab-wounds">
+                <i data-lucide="target" class="w-4 h-4"></i> Wounds & Procedures
             </button>
         </div>
 
         <!-- Scrollable Content -->
-        <div class="p-6 overflow-y-auto flex-1 bg-gray-50 custom-scrollbar">
-            
-            <!-- TAB 1: SOAP Section -->
-            <div id="tab-soap" class="review-tab-content space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                    <h3 class="text-lg font-bold text-gray-800 mb-5 flex items-center">
-                        <i data-lucide="file-text" class="w-5 h-5 mr-2 text-indigo-500"></i> Subjective & Objective
-                    </h3>
-                    <div class="grid grid-cols-1 gap-5">
+        <div class="p-6 overflow-y-auto flex-1 bg-slate-50/60 space-y-5">
+
+            <!-- TAB 1: SOAP Note -->
+            <div id="tab-soap" class="review-tab-content space-y-5">
+
+                <!-- Subjective & Objective card -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-100 flex items-center gap-2.5">
+                        <i data-lucide="file-text" class="w-4 h-4 text-indigo-500"></i>
+                        <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide">Subjective & Objective</h3>
+                    </div>
+                    <div class="p-6 space-y-5">
+                        <!-- Chief Complaint -->
                         <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Chief Complaint</label>
-                            <input type="text" id="review-cc" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-gray-50 text-sm">
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Chief Complaint</label>
+                            <input type="text" id="review-cc"
+                                class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:bg-white transition-all placeholder-slate-300"
+                                placeholder="e.g. Wound care assessment">
                         </div>
-                        
                         <!-- HPI & ROS -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">HPI (History of Present Illness)</label>
-                                <textarea id="review-hpi" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-sm leading-relaxed"></textarea>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">HPI (History of Present Illness)</label>
+                                <textarea id="review-hpi" rows="6"
+                                    class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:bg-white transition-all leading-relaxed resize-none placeholder-slate-300"
+                                    placeholder="Patient history..."></textarea>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">ROS (Review of Systems)</label>
-                                <textarea id="review-ros" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-sm leading-relaxed"></textarea>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">ROS (Review of Systems)</label>
+                                <textarea id="review-ros" rows="6"
+                                    class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:bg-white transition-all leading-relaxed resize-none placeholder-slate-300"
+                                    placeholder="System review..."></textarea>
                             </div>
                         </div>
-
+                        <!-- Subjective other & Objective -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Subjective (Other)</label>
-                                <textarea id="review-subj" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-sm"></textarea>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Subjective (Other)</label>
+                                <textarea id="review-subj" rows="4"
+                                    class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:bg-white transition-all resize-none placeholder-slate-300"
+                                    placeholder="Additional subjective info..."></textarea>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Objective</label>
-                                <textarea id="review-obj" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-sm"></textarea>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Objective</label>
+                                <textarea id="review-obj" rows="4"
+                                    class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:bg-white transition-all resize-none placeholder-slate-300"
+                                    placeholder="Objective findings..."></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                    <h3 class="text-lg font-bold text-gray-800 mb-5 flex items-center">
-                        <i data-lucide="clipboard-check" class="w-5 h-5 mr-2 text-indigo-500"></i> Assessment & Plan
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Assessment</label>
-                            <textarea id="review-assess" rows="6" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-orange-50/50 text-sm leading-relaxed"></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Plan</label>
-                            <textarea id="review-plan" rows="6" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-green-50/50 text-sm leading-relaxed"></textarea>
+                <!-- Assessment & Plan card -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-100 flex items-center gap-2.5">
+                        <i data-lucide="clipboard-check" class="w-4 h-4 text-indigo-500"></i>
+                        <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide">Assessment & Plan</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Assessment</label>
+                                <textarea id="review-assess" rows="7"
+                                    class="w-full px-3.5 py-2.5 border border-amber-200 rounded-lg bg-amber-50/40 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:bg-white transition-all leading-relaxed resize-none placeholder-slate-300"
+                                    placeholder="Clinical assessment..."></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Plan</label>
+                                <textarea id="review-plan" rows="7"
+                                    class="w-full px-3.5 py-2.5 border border-emerald-200 rounded-lg bg-emerald-50/40 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 focus:bg-white transition-all leading-relaxed resize-none placeholder-slate-300"
+                                    placeholder="Care plan..."></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TAB 2: Clinical Data (Diagnoses, Meds, Vitals) -->
-            <div id="tab-clinical" class="review-tab-content hidden space-y-6">
-                
-                <!-- Diagnosis & Medications Section -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Diagnosis -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold text-gray-800 mb-4 border-b border-gray-100 pb-3 flex items-center justify-between">
-                            <span class="flex items-center"><i data-lucide="stethoscope" class="w-5 h-5 mr-2 text-indigo-500"></i> Diagnoses</span>
-                            <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-full border border-indigo-100">ICD-10</span>
-                        </h3>
-                        <div id="review-diagnosis-container" class="space-y-3">
-                            <!-- Injected via JS -->
+            <!-- TAB 2: Clinical Data -->
+            <div id="tab-clinical" class="review-tab-content hidden space-y-5">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- Diagnoses -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+                            <div class="flex items-center gap-2.5">
+                                <i data-lucide="stethoscope" class="w-4 h-4 text-indigo-500"></i>
+                                <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide">Diagnoses</h3>
+                            </div>
+                            <span class="text-xs font-bold bg-indigo-50 text-indigo-600 px-2.5 py-1 rounded-full border border-indigo-100">ICD-10</span>
                         </div>
-                        <button onclick="addEmptyDiagnosis()" class="mt-4 w-full py-2.5 border-2 border-dashed border-gray-200 rounded-lg text-gray-500 hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all flex items-center justify-center text-sm font-medium">
-                            <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Add Diagnosis
-                        </button>
+                        <div class="p-5 space-y-3">
+                            <div id="review-diagnosis-container" class="space-y-3"></div>
+                            <button onclick="addEmptyDiagnosis()"
+                                class="mt-2 w-full py-2.5 border-2 border-dashed border-slate-200 rounded-lg text-slate-400 hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all flex items-center justify-center text-sm font-medium gap-1.5">
+                                <i data-lucide="plus" class="w-4 h-4"></i> Add Diagnosis
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Medications -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                        <h3 class="text-lg font-bold text-gray-800 mb-4 border-b border-gray-100 pb-3 flex items-center justify-between">
-                            <span class="flex items-center"><i data-lucide="pill" class="w-5 h-5 mr-2 text-indigo-500"></i> Medications</span>
-                            <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-full border border-indigo-100">Rx</span>
-                        </h3>
-                        <div id="review-medication-container" class="space-y-3">
-                            <!-- Injected via JS -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+                            <div class="flex items-center gap-2.5">
+                                <i data-lucide="pill" class="w-4 h-4 text-indigo-500"></i>
+                                <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide">Medications</h3>
+                            </div>
+                            <span class="text-xs font-bold bg-indigo-50 text-indigo-600 px-2.5 py-1 rounded-full border border-indigo-100">Rx</span>
                         </div>
-                        <button onclick="addEmptyMedication()" class="mt-4 w-full py-2.5 border-2 border-dashed border-gray-200 rounded-lg text-gray-500 hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all flex items-center justify-center text-sm font-medium">
-                            <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Add Medication
-                        </button>
+                        <div class="p-5 space-y-3">
+                            <div id="review-medication-container" class="space-y-3"></div>
+                            <button onclick="addEmptyMedication()"
+                                class="mt-2 w-full py-2.5 border-2 border-dashed border-slate-200 rounded-lg text-slate-400 hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all flex items-center justify-center text-sm font-medium gap-1.5">
+                                <i data-lucide="plus" class="w-4 h-4"></i> Add Medication
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Vitals Section -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                    <h3 class="text-lg font-bold text-gray-800 mb-5 flex items-center">
-                        <i data-lucide="activity" class="w-5 h-5 mr-2 text-indigo-500"></i> Vitals
-                    </h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Vitals -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-100 flex items-center gap-2.5">
+                        <i data-lucide="heart-pulse" class="w-4 h-4 text-rose-500"></i>
+                        <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide">Vitals</h3>
+                    </div>
+                    <div class="p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        <?php
+                        $vitals = [
+                            ['id'=>'review-bp',     'label'=>'Blood Pressure',  'type'=>'text',   'placeholder'=>'120/80',  'icon'=>'heart',       'unit'=>'mmHg'],
+                            ['id'=>'review-hr',     'label'=>'Heart Rate',      'type'=>'number', 'placeholder'=>'72',      'icon'=>'activity',    'unit'=>'bpm'],
+                            ['id'=>'review-rr',     'label'=>'Resp. Rate',      'type'=>'number', 'placeholder'=>'16',      'icon'=>'wind',        'unit'=>'brpm'],
+                            ['id'=>'review-o2',     'label'=>'O₂ Saturation',   'type'=>'number', 'placeholder'=>'98',      'icon'=>'percent',     'unit'=>'%'],
+                            ['id'=>'review-temp',   'label'=>'Temperature',     'type'=>'number', 'placeholder'=>'36.6',    'icon'=>'thermometer', 'unit'=>'°C'],
+                            ['id'=>'review-weight', 'label'=>'Weight',          'type'=>'number', 'placeholder'=>'70',      'icon'=>'scale',       'unit'=>'kg'],
+                            ['id'=>'review-height', 'label'=>'Height',          'type'=>'number', 'placeholder'=>'170',     'icon'=>'ruler',       'unit'=>'cm'],
+                        ];
+                        foreach ($vitals as $v): ?>
                         <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">BP</label>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5"><?= $v['label'] ?></label>
                             <div class="relative">
-                                <input type="text" id="review-bp" class="w-full p-2.5 pl-9 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm" placeholder="120/80">
-                                <i data-lucide="heart" class="w-4 h-4 text-gray-400 absolute left-3 top-3"></i>
+                                <input type="<?= $v['type'] ?>" id="<?= $v['id'] ?>"
+                                    <?= $v['type']==='number' ? 'step="any"' : '' ?>
+                                    placeholder="<?= $v['placeholder'] ?>"
+                                    class="w-full pl-3.5 pr-12 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:bg-white transition-all">
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-xs text-slate-400 font-medium pointer-events-none"><?= $v['unit'] ?></span>
                             </div>
                         </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">HR (bpm)</label>
-                            <input type="number" id="review-hr" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">RR (bpm)</label>
-                            <input type="number" id="review-rr" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">O2 Sat (%)</label>
-                            <input type="number" id="review-o2" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Temp (°C)</label>
-                            <input type="number" step="0.1" id="review-temp" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Weight (kg)</label>
-                            <input type="number" step="0.1" id="review-weight" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Height (cm)</label>
-                            <input type="number" id="review-height" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
 
             <!-- TAB 3: Wounds & Procedures -->
-            <div id="tab-wounds" class="review-tab-content hidden space-y-6">
-                
-                <!-- Image Preview for Association -->
-                <div id="review-image-container" class="hidden bg-indigo-50 p-5 rounded-xl border border-indigo-100 mb-4">
-                    <h4 class="text-sm font-bold text-indigo-800 mb-3 flex items-center">
-                        <i data-lucide="image" class="w-4 h-4 mr-2"></i> Photos to be Saved
-                    </h4>
-                    <div class="flex flex-col gap-3">
-                        <div id="review-images-list" class="flex flex-wrap gap-3">
-                            <!-- Images injected here -->
+            <div id="tab-wounds" class="review-tab-content hidden space-y-5">
+
+                <!-- Photo preview -->
+                <div id="review-image-container" class="hidden bg-indigo-50 rounded-xl border border-indigo-100 p-5">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i data-lucide="image" class="w-4 h-4 text-indigo-600"></i>
+                        <h4 class="text-sm font-bold text-indigo-800">Photos to be Saved</h4>
+                    </div>
+                    <div id="review-images-list" class="flex flex-wrap gap-3"></div>
+                    <p class="text-xs text-indigo-500 mt-3 flex items-start gap-1.5">
+                        <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5"></i>
+                        Photos will be automatically linked to the <strong class="font-semibold">first wound</strong> listed below.
+                    </p>
+                </div>
+
+                <!-- Wound Assessments -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+                        <div class="flex items-center gap-2.5">
+                            <i data-lucide="target" class="w-4 h-4 text-indigo-500"></i>
+                            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide">Wound Assessments</h3>
                         </div>
-                        <div class="text-xs text-indigo-600 mt-1 flex items-start">
-                            <i data-lucide="info" class="w-3 h-3 mr-1.5 mt-0.5 flex-shrink-0"></i>
-                            <p>These photos will be automatically linked to the <strong class="underline">first wound</strong> listed below.</p>
+                        <span class="text-xs font-bold bg-green-50 text-green-700 px-2.5 py-1 rounded-full border border-green-100">Auto-detected</span>
+                    </div>
+                    <div class="p-5">
+                        <div id="review-wounds-container" class="space-y-4">
+                            <div class="flex flex-col items-center justify-center py-10 text-center rounded-lg border-2 border-dashed border-slate-200 bg-slate-50">
+                                <i data-lucide="scan-search" class="w-8 h-8 text-slate-300 mb-2"></i>
+                                <p class="text-sm text-slate-400 font-medium">No wounds detected</p>
+                                <p class="text-xs text-slate-300">Dictate wound details for AI extraction</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Wounds Section -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                    <h3 class="text-lg font-bold text-gray-800 mb-5 border-b border-gray-100 pb-3 flex justify-between items-center">
-                        <span class="flex items-center"><i data-lucide="target" class="w-5 h-5 mr-2 text-indigo-500"></i> Wound Assessments</span>
-                        <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-100">Auto-detected</span>
-                    </h3>
-                    <div id="review-wounds-container" class="space-y-4">
-                        <!-- Wounds will be injected here via JS -->
-                        <p class="text-gray-400 italic text-center py-8 bg-gray-50 rounded-lg border border-dashed border-gray-300">No wounds detected.</p>
+                <!-- Procedure -->
+                <div id="review-procedure-section" class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden hidden">
+                    <div class="px-6 py-4 border-b border-slate-100 flex items-center gap-2.5">
+                        <i data-lucide="scissors" class="w-4 h-4 text-indigo-500"></i>
+                        <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide">Procedure Performed</h3>
                     </div>
-                </div>
-
-                <!-- Procedure Section -->
-                <div id="review-procedure-section" class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hidden">
-                    <h3 class="text-lg font-bold text-gray-800 mb-5 border-b border-gray-100 pb-3 flex items-center">
-                        <i data-lucide="scissors" class="w-5 h-5 mr-2 text-indigo-500"></i> Procedure Performed
-                    </h3>
-                    <div class="grid grid-cols-1 gap-5">
+                    <div class="p-6 space-y-5">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Type</label>
-                                <input type="text" id="review-proc-type" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Type</label>
+                                <input type="text" id="review-proc-type" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white transition-all">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Location</label>
-                                <input type="text" id="review-proc-loc" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Location</label>
+                                <input type="text" id="review-proc-loc" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white transition-all">
                             </div>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Dimensions</label>
-                                <input type="text" id="review-proc-dims" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Dimensions</label>
+                                <input type="text" id="review-proc-dims" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white transition-all">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Depth</label>
-                                <input type="text" id="review-proc-depth" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Depth</label>
+                                <input type="text" id="review-proc-depth" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white transition-all">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Instrument</label>
-                                <input type="text" id="review-proc-inst" class="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Instrument</label>
+                                <input type="text" id="review-proc-inst" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white transition-all">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Narrative Description</label>
-                            <textarea id="review-proc-narrative" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm"></textarea>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Narrative Description</label>
+                            <textarea id="review-proc-narrative" rows="3" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-lg bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white transition-all resize-none"></textarea>
                         </div>
                     </div>
                 </div>
@@ -726,20 +753,24 @@ $stmt_d->close();
         </div>
 
         <!-- Footer -->
-        <div class="p-5 border-t border-gray-200 bg-white flex justify-between items-center">
-            <div class="text-sm text-gray-500 italic flex items-center">
-                <i data-lucide="info" class="w-4 h-4 mr-1.5 text-blue-500"></i> Review all tabs before saving.
-            </div>
-            <div class="flex space-x-3">
-                <button id="cancel-review-btn" class="px-6 py-2.5 bg-white border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 hover:text-gray-900 transition-colors shadow-sm">
+        <div class="px-7 py-4 border-t border-slate-100 bg-white flex justify-between items-center">
+            <p class="text-xs text-slate-400 flex items-center gap-1.5">
+                <i data-lucide="info" class="w-3.5 h-3.5 text-indigo-400"></i>
+                Review all tabs before saving.
+            </p>
+            <div class="flex items-center gap-3">
+                <button id="cancel-review-btn"
+                    class="px-5 py-2.5 text-sm font-semibold text-slate-600 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
                     Cancel
                 </button>
-                <button id="confirm-save-btn" class="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-all shadow-md hover:shadow-lg flex items-center transform hover:-translate-y-0.5">
-                    <i data-lucide="save" class="w-5 h-5 mr-2"></i>
+                <button id="confirm-save-btn"
+                    class="px-6 py-2.5 text-sm font-bold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-all shadow-md shadow-indigo-200 hover:shadow-lg flex items-center gap-2">
+                    <i data-lucide="save" class="w-4 h-4"></i>
                     Confirm & Save to Chart
                 </button>
             </div>
         </div>
+
     </div>
 </div>
 
