@@ -38,7 +38,6 @@ if ($search !== '') {
 }
 
 $sql  = "SELECT p.patient_id AS id, p.first_name, p.last_name, p.date_of_birth, p.gender,
-                p.primary_diagnosis, p.profile_image_url,
                 u.full_name AS facility_name,
                 (SELECT MAX(vn.note_date) FROM visit_notes vn WHERE vn.patient_id = p.patient_id) AS last_visit_date
          FROM patients p
