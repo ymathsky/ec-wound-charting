@@ -36,6 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
          LEFT JOIN users u ON p.facility_id = u.user_id
          WHERE p.patient_id = ?"
     );
+    if ($stmt === false) {
+        echo json_encode(['success' => false, 'message' => 'SQL error (patient): ' . $conn->error]);
+        exit;
+    }
     $stmt->bind_param("i", $patient_id);
     $stmt->execute();
     $patient = $stmt->get_result()->fetch_assoc();
