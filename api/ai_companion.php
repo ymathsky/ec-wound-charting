@@ -1280,10 +1280,12 @@ if ($action === 'process_narrative') {
         exit;
     }
 
-    $narrative = $data->narrative;
+    $narrative = is_string($data->narrative) ? $data->narrative : json_encode($data->narrative);
     $image_data = isset($data->image_data) ? $data->image_data : null;
     $mime_type = isset($data->mime_type) ? $data->mime_type : null;
-    $context = isset($data->context) ? $data->context : 'General';
+    // $data->context can be a rich object (from visit_narrative.php) or a plain string.
+    // It is processed into $history_context below. Here we only need a short label string.
+    $context = (isset($data->context) && is_string($data->context)) ? $data->context : 'Wound Care Visit';
     
     // Standard Lists for AI Normalization
     $wound_locations_list = implode(", ", [
