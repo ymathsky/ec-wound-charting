@@ -20,8 +20,15 @@ require_once '../db_connect.php';
 require_once 'mobile_middleware.php'; // validates JWT, sets $mobile_user
 
 $user_id = intval($mobile_user['user_id']);
-$site_url = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
-$base_url = $site_url . '/ec/';
+
+// Build reliable base URL — works on XAMPP (/ec/) and cPanel root or subdir
+$scheme   = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host     = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost';
+// Compute the app root by going two levels up from this script: api/mobile_wounds.php → api/ → /
+$doc_root   = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/\\');
+$script_dir = rtrim(dirname(dirname($_SERVER['SCRIPT_FILENAME'] ?? __FILE__)), '/\\');
+$app_path   = str_replace(str_replace('\\', '/', $doc_root), '', str_replace('\\', '/', $script_dir));
+$base_url   = $scheme . '://' . $host . rtrim($app_path, '/') . '/';
 
 // ── GET ──────────────────────────────────────────────────────────────────────
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -92,6 +99,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         $images = array_map(function ($img) use ($base_url) {
             $img['url'] = $base_url . ltrim($img['image_path'], '/');
+            // Check if file actually exists on this server
+            $abs = dirname(dirname(__FILE__)) . '/' . ltrim($img['image_path'], '/');
+            $img['file_exists'] = file_exists($abs);
             return $img;
         }, $imgs_raw);
 
