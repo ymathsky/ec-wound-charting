@@ -162,6 +162,61 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    if ($action === 'save_assessment') {
+        $wound_id   = intval($body['wound_id']   ?? 0);
+        $patient_id_a = intval($body['patient_id'] ?? 0);
+        if (!$wound_id) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'wound_id required.']);
+            exit;
+        }
+        $adate     = trim($body['assessment_date']    ?? date('Y-m-d'));
+        $len       = !empty($body['length_cm'])   ? round(floatval($body['length_cm']),  2) : null;
+        $wid       = !empty($body['width_cm'])    ? round(floatval($body['width_cm']),   2) : null;
+        $dep       = !empty($body['depth_cm'])    ? round(floatval($body['depth_cm']),   2) : null;
+        $area      = !empty($body['area_cm2'])    ? round(floatval($body['area_cm2']),   2) : null;
+        $gran      = isset($body['granulation_percent']) ? intval($body['granulation_percent']) : null;
+        $slou      = isset($body['slough_percent'])      ? intval($body['slough_percent'])      : null;
+        $necr      = isset($body['necrotic_percent'])    ? intval($body['necrotic_percent'])    : null;
+        $epit      = isset($body['epithelial_percent'])  ? intval($body['epithelial_percent'])  : null;
+        $exu_amt   = trim($body['exudate_amount']       ?? '') ?: null;
+        $exu_type  = trim($body['exudate_type']         ?? '') ?: null;
+        $periwound = trim($body['periwound_condition']  ?? '') ?: null;
+        $odor      = trim($body['odor_present']         ?? 'No');
+        $bed_notes = trim(implode("\n", array_filter([
+            $body['wound_bed']        ?? '',
+            'Edges: '   . ($body['edges']            ?? ''),
+            'Periwound: '. ($body['periwound_condition'] ?? ''),
+            'Confidence: '.($body['confidence']      ?? 'Medium'),
+        ]))) ?: null;
+        $summary = trim($body['clinical_summary'] ?? '') ?: null;
+
+        $stmt = $conn->prepare(
+            "INSERT INTO wound_assessments
+               (wound_id, patient_id, assessment_date,
+                length_cm, width_cm, depth_cm, area_cm2,
+                granulation_percent, slough_percent, eschar_percent, epithelialization_percent,
+                exudate_amount, exudate_type, drainage_type,
+                periwound_condition, odor_present,
+                clinician_assessment, clinician_plan, assessment_type, created_at)
+             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'Mobile AI',NOW())"
+        );
+        $stmt->bind_param(
+            "iiiddddiiiissssssss",
+            $wound_id, $patient_id_a, $adate,
+            $len, $wid, $dep, $area,
+            $gran, $slou, $necr, $epit,
+            $exu_amt, $exu_type, $exu_type,
+            $periwound, $odor,
+            $bed_notes, $summary
+        );
+        $stmt->execute();
+        $new_id = $stmt->insert_id;
+        $stmt->close();
+        echo json_encode(['success' => true, 'assessment_id' => $new_id, 'message' => 'Assessment saved.']);
+        exit;
+    }
+
     if ($action === 'upload_photo') {
         $wound_id      = intval($body['wound_id']      ?? 0);
         $patient_id    = intval($body['patient_id']    ?? 0);
