@@ -89,7 +89,7 @@ if ($vitals) {
     if ($vparts) $context .= "Vitals: " . implode(', ', $vparts) . "\n";
 }
 
-// Latest wound assessments
+// Latest wound assessments (current visit)
 if ($appointment_id) {
     $stmt = $conn->prepare(
         "SELECT wa.assessment_date, w.location, w.wound_type,
@@ -103,22 +103,84 @@ if ($appointment_id) {
     $stmt->execute();
     $wounds = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     $stmt->close();
-    if ($wounds) $context .= "Wound Assessments: " . json_encode($wounds) . "\n";
+    if ($wounds) $context .= "Today's Wound Assessments: " . json_encode($wounds) . "\n";
+}
+
+// Wound trajectory (last 5 assessments across all visits for this patient)
+$stmt = $conn->prepare(
+    "SELECT wa.assessment_date, w.location, w.wound_type, w.status,
+            wa.length_cm, wa.width_cm, wa.area_cm2,
+            wa.granulation_percent, wa.slough_percent, wa.eschar_percent,
+            wa.exudate_amount, wa.signs_of_infection, wa.clinician_assessment
+     FROM wound_assessments wa
+     JOIN wounds w ON w.wound_id = wa.wound_id
+     WHERE w.patient_id = ?
+     ORDER BY wa.assessment_date DESC LIMIT 5"
+);
+$stmt->bind_param("i", $patient_id);
+$stmt->execute();
+$trajectory = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
+if ($trajectory) $context .= "Recent Wound History (last 5): " . json_encode($trajectory) . "\n";
+
+// Active medications
+$stmt = $conn->prepare(
+    "SELECT drug_name, dosage, frequency, route
+     FROM patient_medications WHERE patient_id = ? AND status = 'Active' LIMIT 10"
+);
+$stmt->bind_param("i", $patient_id);
+$stmt->execute();
+$meds = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
+if ($meds) {
+    $med_list = implode(', ', array_map(fn($m) => "{$m['drug_name']} {$m['dosage']}", $meds));
+    $context .= "Active Medications: $med_list\n";
 }
 
 // ── Build section-specific prompt ─────────────────────────────────────────
+$system_instruction =
+    "You are a highly experienced Wound, Ostomy, and Continence Nurse Practitioner (WOCN-NP) "
+  . "specializing in complex wound care documentation. You write precise, professional SOAP notes "
+  . "following outpatient wound care clinic standards. Your language is clinical but readable — "
+  . "no jargon without context, no filler phrases. You never invent data not in the context provided. "
+  . "Return plain text only — absolutely no markdown asterisks, headers, or bullet symbols. "
+  . "Numbers and structured lists may use plain dashes or numbers.";
+
 $prompts = [
-    'chief_complaint' => "Write a concise one-sentence chief complaint for a wound care clinical note. Start with 'Patient presents for...'. Use the context below. Return plain text only, no markdown.\n\nContext:\n$context",
-    'subjective'      => "Write a professional Subjective (S) section for a wound care SOAP note. Include patient-reported symptoms, pain level, and wound history. Be clinical and concise (3–5 sentences). Plain text only.\n\nContext:\n$context",
-    'objective'       => "Write the Objective (O) section for a wound care SOAP note. Include vital signs, wound measurements, wound appearance, drainage, and infection signs based on the data below. Clinical format, 3–6 sentences. Plain text only.\n\nContext:\n$context",
-    'assessment'      => "Write the Assessment (A) section for a wound care SOAP note. Provide a clinical impression, wound status (improved/stable/worsening), and relevant diagnoses. 2–4 sentences, clinical tone. Plain text only.\n\nContext:\n$context",
-    'plan'            => "Write the Plan (P) section for a wound care SOAP note. Include wound care orders, dressing changes, referrals, follow-up schedule, and patient education. Numbered list format where appropriate. Plain text only.\n\nContext:\n$context",
+    'chief_complaint' => "Write a single concise sentence as the chief complaint for a wound care visit. "
+        . "Format: 'Patient presents for [reason] involving [wound type] to [location].' "
+        . "If wound trajectory shows improvement or worsening, include that. Plain text only.\n\nContext:\n$context",
+
+    'subjective' => "Write a professional Subjective (S) section for a wound care SOAP note. "
+        . "Cover: patient-reported pain (use NRS scale if available), wound symptoms (drainage, odor, color changes), "
+        . "functional limitations, compliance with previous treatment plan, and any new concerns. "
+        . "4-6 sentences. Reference wound history trajectory if present. Plain text only.\n\nContext:\n$context",
+
+    'objective' => "Write the Objective (O) section for a wound care SOAP note. "
+        . "Include: vital signs, wound measurements (L×W×D cm, area cm²), wound bed description "
+        . "(tissue composition %), exudate character and amount, periwound status, signs of infection, "
+        . "and wound edges. Reference previous measurements for comparison if available. "
+        . "4-7 sentences. Clinical format. Plain text only.\n\nContext:\n$context",
+
+    'assessment' => "Write the Assessment (A) section for a wound care SOAP note. "
+        . "Include: primary wound diagnosis, healing trajectory (improving/stable/stalled/worsening — "
+        . "cite objective measurements), wound healing stage (inflammatory/proliferative/remodeling), "
+        . "any complications (infection, delayed healing), and comorbidities impacting healing. "
+        . "3-5 sentences. Plain text only.\n\nContext:\n$context",
+
+    'plan' => "Write the Plan (P) section for a wound care SOAP note. "
+        . "Include specific orders: wound cleansing method, primary/secondary dressing selection with "
+        . "clinical rationale, debridement if needed, off-loading or compression orders, "
+        . "lab/diagnostic orders if indicated, referrals, patient education points, "
+        . "and follow-up interval with specific return criteria. "
+        . "Use a numbered list format (1. 2. 3. ...). Plain text only.\n\nContext:\n$context",
 ];
 
-$prompt = $prompts[$section] ?? "Write a professional {$section} section for a clinical wound care note. Plain text only.\n\nContext:\n$context";
+$prompt = $prompts[$section]
+    ?? "Write a professional {$section} section for a wound care SOAP note. Plain text only.\n\nContext:\n$context";
 
 if ($current_content) {
-    $prompt .= "\n\nThe clinician has already typed: \"$current_content\" — refine and continue this.";
+    $prompt .= "\n\nThe clinician has already started typing: \"{$current_content}\" — refine, expand, and integrate this with the context above.";
 }
 
 // ── Call Gemini ─────────────────────────────────────────────────────────
@@ -126,8 +188,11 @@ $api_key = defined('GEMINI_API_KEY') ? GEMINI_API_KEY : getenv('GEMINI_API_KEY')
 $url     = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$api_key";
 
 $payload = [
+    'system_instruction' => [
+        'parts' => [['text' => $system_instruction]],
+    ],
     'contents'         => [['parts' => [['text' => $prompt]]]],
-    'generationConfig' => ['temperature' => 0.4, 'maxOutputTokens' => 512],
+    'generationConfig' => ['temperature' => 0.35, 'maxOutputTokens' => 700],
 ];
 
 $ch = curl_init($url);
