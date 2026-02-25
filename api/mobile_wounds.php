@@ -34,11 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     // Fetch all wounds for the patient
     $stmt = $conn->prepare(
-        "SELECT wound_id, patient_id, location, wound_type, status,
-                date_identified, created_at
+        "SELECT wound_id, patient_id, location, wound_type, diagnosis, status,
+                date_onset, created_at
          FROM wounds
          WHERE patient_id = ?
-         ORDER BY date_identified DESC, wound_id DESC"
+         ORDER BY date_onset DESC, wound_id DESC"
     );
     $stmt->bind_param("i", $patient_id);
     $stmt->execute();
@@ -55,8 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     length_cm, width_cm, depth_cm,
                     ROUND(length_cm * width_cm, 2)              AS area_cm2,
                     ROUND(length_cm * width_cm * depth_cm, 2)   AS volume_cm3,
-                    wound_bed, exudate_amount, exudate_type,
-                    infection_signs, pain_score, treatment_applied, notes
+                    drainage_type, exudate_amount, exudate_type,
+                    signs_of_infection, pain_level, treatments_provided, clinician_assessment AS notes
              FROM wound_assessments
              WHERE wound_id = ?
              ORDER BY assessment_date ASC, assessment_id ASC"
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         // Numeric conversion
         foreach ($assessments as &$a) {
-            foreach (['length_cm','width_cm','depth_cm','area_cm2','volume_cm3','pain_score'] as $col) {
+            foreach (['length_cm','width_cm','depth_cm','area_cm2','volume_cm3','pain_level'] as $col) {
                 if (isset($a[$col])) $a[$col] = $a[$col] !== null ? floatval($a[$col]) : null;
             }
         }
@@ -99,8 +99,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             'wound_id'          => $wound_id,
             'location'          => $w['location'],
             'wound_type'        => $w['wound_type'],
+            'diagnosis'         => $w['diagnosis'],
             'status'            => $w['status'],
-            'date_identified'   => $w['date_identified'],
+            'date_onset'        => $w['date_onset'],
             'latest_assessment' => $latest,
             'assessments'       => $assessments,
             'images'            => $images,
