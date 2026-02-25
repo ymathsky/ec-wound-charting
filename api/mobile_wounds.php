@@ -201,8 +201,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 clinician_assessment, clinician_plan, assessment_type, created_at)
              VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'Mobile AI',NOW())"
         );
+        if (!$stmt) {
+            error_log("save_assessment prepare error: " . $conn->error);
+            echo json_encode(['success' => false, 'message' => 'DB prepare error: ' . $conn->error]);
+            exit;
+        }
         $stmt->bind_param(
-            "iiiddddiiiissssssss",
+            "iisddddiiiissssssss",
             $wound_id, $patient_id_a, $adate,
             $len, $wid, $dep, $area,
             $gran, $slou, $necr, $epit,
@@ -210,7 +215,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $periwound, $odor,
             $bed_notes, $summary
         );
-        $stmt->execute();
+        if (!$stmt->execute()) {
+            $err = $stmt->error;
+            $stmt->close();
+            error_log("save_assessment execute error: $err");
+            echo json_encode(['success' => false, 'message' => "DB error: $err"]);
+            exit;
+        }
         $new_id = $stmt->insert_id;
         $stmt->close();
         echo json_encode(['success' => true, 'assessment_id' => $new_id, 'message' => 'Assessment saved.']);
