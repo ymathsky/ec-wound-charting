@@ -94,45 +94,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $bmi = round($weight / (($height / 100) ** 2), 1);
     }
 
+    if (!$appointment_id) {
+        // appointment_id is NOT NULL in schema — can't save without it
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => 'Save the visit note first, then try saving vitals again.']);
+        exit;
+    }
+
     $stmt = $conn->prepare(
         "INSERT INTO patient_vitals
              (patient_id, appointment_id, visit_date, blood_pressure, heart_rate,
               respiratory_rate, temperature_celsius, oxygen_saturation,
               weight_kg, height_cm, bmi, created_at)
-         VALUES (?, ?, CURDATE(), ?, ?, ?, ?, ?, ?, ?, ?, NOW())
+         VALUES (?, ?, NOW(), ?, ?, ?, ?, ?, ?, ?, ?, NOW())
          ON DUPLICATE KEY UPDATE
-              blood_pressure     = VALUES(blood_pressure),
-              heart_rate         = VALUES(heart_rate),
-              respiratory_rate   = VALUES(respiratory_rate),
+              blood_pressure      = VALUES(blood_pressure),
+              heart_rate          = VALUES(heart_rate),
+              respiratory_rate    = VALUES(respiratory_rate),
               temperature_celsius = VALUES(temperature_celsius),
-              oxygen_saturation  = VALUES(oxygen_saturation),
-              weight_kg          = VALUES(weight_kg),
-              height_cm          = VALUES(height_cm),
-              bmi                = VALUES(bmi)"
+              oxygen_saturation   = VALUES(oxygen_saturation),
+              weight_kg           = VALUES(weight_kg),
+              height_cm           = VALUES(height_cm),
+              bmi                 = VALUES(bmi)"
     );
 
-    if ($stmt === false) {
-        // appointment_id column may not exist — fall back without it
-        $stmt = $conn->prepare(
-            "INSERT INTO patient_vitals
-                 (patient_id, visit_date, blood_pressure, heart_rate,
-                  respiratory_rate, temperature_celsius, oxygen_saturation,
-                  weight_kg, height_cm, bmi, created_at)
-             VALUES (?, CURDATE(), ?, ?, ?, ?, ?, ?, ?, ?, NOW())
-             ON DUPLICATE KEY UPDATE
-                  blood_pressure     = VALUES(blood_pressure),
-                  heart_rate         = VALUES(heart_rate),
-                  respiratory_rate   = VALUES(respiratory_rate),
-                  temperature_celsius = VALUES(temperature_celsius),
-                  oxygen_saturation  = VALUES(oxygen_saturation),
-                  weight_kg          = VALUES(weight_kg),
-                  height_cm          = VALUES(height_cm),
-                  bmi                = VALUES(bmi)"
-        );
-        $stmt->bind_param("isiiiddiid", $patient_id, $bp, $hr, $rr, $temp, $spo2, $weight, $height, $bmi);
-    } else {
-        $stmt->bind_param("iisiiiddiid", $patient_id, $appointment_id, $bp, $hr, $rr, $temp, $spo2, $weight, $height, $bmi);
-    }
+    // Type string: i=patient_id, i=appointment_id, s=blood_pressure,
+    //   i=heart_rate, i=respiratory_rate, d=temperature, i=spo2,
+    //   d=weight, d=height, d=bmi  (10 params)
+    $stmt->bind_param("iisiididdd", $patient_id, $appointment_id, $bp, $hr, $rr, $temp, $spo2, $weight, $height, $bmi);
 
     if ($stmt->execute()) {
         echo json_encode(['success' => true, 'message' => 'Vitals saved.', 'bmi' => $bmi]);
