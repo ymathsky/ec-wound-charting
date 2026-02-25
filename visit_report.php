@@ -259,8 +259,20 @@ $facility_name = $report_data['facility_name'] ? strtoupper($report_data['facili
 $facility_phone = $report_data['facility_phone'] ?? '(555) 123-4567';
 $facility_address = $report_data['facility_address'] ?? '123 Medical Center Dr';
 
-$back_link_text = ($user_role === 'facility') ? 'Back to Appointments' : 'Back to Visit Summary';
-$back_link_href = ($user_role === 'facility') ? "patient_appointments.php?id={$patient_id}" : "visit_summary.php?appointment_id={$appointment_id}&patient_id={$patient_id}";
+$from = isset($_GET['from']) ? $_GET['from'] : '';
+if ($user_role === 'facility') {
+    $back_link_text = 'Back to Appointments';
+    $back_link_href = "patient_appointments.php?id={$patient_id}";
+} elseif ($from === 'advanced' || $from === 'notes') {
+    $back_link_text = 'Back to Visit Note';
+    $back_link_href = "visit_notes.php?appointment_id={$appointment_id}&patient_id={$patient_id}";
+} elseif ($from === 'ai') {
+    $back_link_text = 'Back to AI Assistant';
+    $back_link_href = "visit_ai_assistant.php?appointment_id={$appointment_id}&patient_id={$patient_id}";
+} else {
+    $back_link_text = 'Back to Visit Summary';
+    $back_link_href = "visit_summary.php?appointment_id={$appointment_id}&patient_id={$patient_id}";
+}
 
 $is_preview = isset($_GET['mode']) && $_GET['mode'] === 'preview';
 

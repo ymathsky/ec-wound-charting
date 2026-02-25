@@ -85,6 +85,12 @@ $ver = time();
                         <i data-lucide="clipboard-check" class="w-5 h-5 mr-2"></i>
                         Review
                     </a>
+                    <a href="visit_report.php?appointment_id=<?php echo $safe_appointment_id; ?>&patient_id=<?php echo $safe_patient_id; ?>&from=advanced" target="_blank"
+                       class="bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition duration-150 ease-in-out shadow-xl transform hover:scale-105 flex items-center justify-center"
+                       title="Open print-ready report (use browser Print / Save as PDF)">
+                        <i data-lucide="printer" class="w-5 h-5 mr-2"></i>
+                        Print / PDF
+                    </a>
                 </div>
             </header>
             <!-- Sticky Tab Navigation (Replaces Submenu) -->

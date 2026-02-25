@@ -350,9 +350,10 @@ if (empty($live_note_draft)) {
                 <button type="button" id="copy-note-btn" class="p-1.5 text-gray-600 hover:bg-white hover:shadow-sm rounded hover:text-indigo-600 transition-all" title="Copy to Clipboard">
                     <i data-lucide="copy" class="w-4 h-4"></i>
                 </button>
-                <button type="button" id="print-note-btn" class="p-1.5 text-gray-600 hover:bg-white hover:shadow-sm rounded hover:text-indigo-600 transition-all" title="Print Note">
+                <a href="visit_report.php?appointment_id=<?php echo $appointment_id; ?>&patient_id=<?php echo $patient_id; ?>&from=ai" target="_blank"
+                   id="print-note-btn" class="p-1.5 text-gray-600 hover:bg-white hover:shadow-sm rounded hover:text-indigo-600 transition-all flex items-center" title="Print / Save as PDF">
                     <i data-lucide="printer" class="w-4 h-4"></i>
-                </button>
+                </a>
             </div>
 
             <div class="flex items-center space-x-3">
@@ -1301,7 +1302,9 @@ if (empty($live_note_draft)) {
         });
     }
 
-    if (printBtn) {
+    // Print button is now a direct <a> link to visit_report.php (opened in new tab).
+    // The block below is retained for reference but no longer wired to the button.
+    if (false && printBtn) {
         printBtn.addEventListener('click', () => {
             const content = liveNote.innerHTML;
             const printWindow = window.open('', '', 'height=800,width=1000');
