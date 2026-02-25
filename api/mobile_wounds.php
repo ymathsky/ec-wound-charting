@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $allowed = ['jpg', 'jpeg', 'png', 'heic'];
         if (!in_array($image_ext, $allowed)) $image_ext = 'jpg';
 
-        $upload_dir = '../uploads/wound_images/';
+        $upload_dir = dirname(dirname(__FILE__)) . '/uploads/wound_images/';
         if (!is_dir($upload_dir)) mkdir($upload_dir, 0755, true);
 
         $filename   = 'mobile_' . $patient_id . '_w' . $wound_id . '_' . uniqid() . '.' . $image_ext;
