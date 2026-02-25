@@ -88,6 +88,73 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    // ── Upload photo action ──────────────────────────────────────────────────
+    if ($action === 'upload_photo') {
+        $image_data = $data['image_data'] ?? '';
+        $image_ext  = strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $data['image_ext'] ?? 'jpg'));
+
+        if (!$image_data) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'image_data required']);
+            exit;
+        }
+
+        if (strpos($image_data, ',') !== false) {
+            $image_data = explode(',', $image_data, 2)[1];
+        }
+
+        $decoded = base64_decode($image_data);
+        if (!$decoded) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Invalid image data']);
+            exit;
+        }
+
+        $allowed_exts = ['jpg', 'jpeg', 'png'];
+        if (!in_array($image_ext, $allowed_exts)) $image_ext = 'jpg';
+
+        $upload_dir = dirname(dirname(__FILE__)) . '/uploads/visit_photos/';
+        if (!is_dir($upload_dir)) mkdir($upload_dir, 0755, true);
+
+        $filename = 'visit_' . $appointment_id . '_' . uniqid() . '.' . $image_ext;
+        $filepath = $upload_dir . $filename;
+        $db_path  = 'uploads/visit_photos/' . $filename;
+
+        if (!file_put_contents($filepath, $decoded)) {
+            http_response_code(500);
+            echo json_encode(['success' => false, 'message' => 'Failed to save image']);
+            exit;
+        }
+
+        // Check if visit_attachments or appointment_attachments table exists; fallback to a simple column note
+        $has_table = $conn->query("SHOW TABLES LIKE 'visit_attachments'")->num_rows > 0;
+        if ($has_table) {
+            $stmt = $conn->prepare(
+                "INSERT INTO visit_attachments (appointment_id, patient_id, file_path, file_type, uploaded_by, created_at)
+                 VALUES (?, ?, ?, 'photo', ?, NOW())"
+            );
+            $stmt->bind_param("iisi", $appointment_id, $patient_id, $db_path, $user_id);
+            $stmt->execute();
+            $stmt->close();
+        }
+
+        // Build URL
+        $scheme   = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+        $host     = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost';
+        $doc_root = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/\\');
+        $scrp_dir = rtrim(dirname(dirname($_SERVER['SCRIPT_FILENAME'] ?? __FILE__)), '/\\');
+        $app_path = str_replace(str_replace('\\', '/', $doc_root), '', str_replace('\\', '/', $scrp_dir));
+        $base_url = $scheme . '://' . $host . rtrim($app_path, '/') . '/';
+
+        echo json_encode([
+            'success'   => true,
+            'message'   => 'Photo uploaded.',
+            'url'       => $base_url . $db_path,
+            'file_path' => $db_path,
+        ]);
+        exit;
+    }
+
     // ── Sign action ──────────────────────────────────────────────────────────
     if ($action === 'sign') {
         $stmt = $conn->prepare(
