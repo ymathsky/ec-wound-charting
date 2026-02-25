@@ -127,6 +127,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $body   = json_decode(file_get_contents('php://input'), true) ?? [];
     $action = $body['action'] ?? '';
 
+    if ($action === 'create') {
+        $patient_id  = intval($body['patient_id']   ?? 0);
+        $wound_type  = trim($body['wound_type']  ?? '');
+        $location    = trim($body['location']    ?? '');
+        $status      = trim($body['status']      ?? 'Active');
+        $date_onset  = trim($body['date_onset']  ?? date('Y-m-d'));
+        $diagnosis   = trim($body['diagnosis']   ?? '');
+
+        if (!$patient_id || !$wound_type || !$location) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'patient_id, wound_type, and location are required.']);
+            exit;
+        }
+
+        $allowed_statuses = ['Active', 'Healed', 'Inactive'];
+        if (!in_array($status, $allowed_statuses)) $status = 'Active';
+
+        $diag_val = $diagnosis ?: null;
+        $stmt = $conn->prepare(
+            "INSERT INTO wounds (patient_id, wound_type, location, status, date_onset, diagnosis, created_at)
+             VALUES (?, ?, ?, ?, ?, ?, NOW())"
+        );
+        $stmt->bind_param("isssss", $patient_id, $wound_type, $location, $status, $date_onset, $diag_val);
+        $stmt->execute();
+        $wound_id = $stmt->insert_id;
+        $stmt->close();
+
+        echo json_encode([
+            'success'  => true,
+            'message'  => 'Wound created successfully.',
+            'wound_id' => $wound_id,
+        ]);
+        exit;
+    }
+
     if ($action === 'upload_photo') {
         $wound_id      = intval($body['wound_id']      ?? 0);
         $patient_id    = intval($body['patient_id']    ?? 0);
