@@ -183,11 +183,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $exu_type  = trim($body['exudate_type']         ?? '') ?: null;
         $periwound = trim($body['periwound_condition']  ?? '') ?: null;
         $odor      = trim($body['odor_present']         ?? 'No');
+
+        // Build infection signs string for signs_of_infection column
+        $infect_arr = $body['infection_signs'] ?? [];
+        $infect_str = is_array($infect_arr) && count($infect_arr) ? implode('; ', $infect_arr) : null;
+
+        // Build treatments string combining treatment_suggestions
+        $tx_arr  = $body['treatment_suggestions'] ?? [];
+        $tx_str  = is_array($tx_arr) && count($tx_arr)
+                    ? implode("\n", array_map(fn($t, $i) => ($i+1).". $t", $tx_arr, array_keys($tx_arr)))
+                    : null;
+
+        // Compose clinician_assessment from wound_bed, edges, healing_stage, confidence
+        $healing = trim($body['healing_stage'] ?? '');
         $bed_notes = trim(implode("\n", array_filter([
-            $body['wound_bed']        ?? '',
-            'Edges: '   . ($body['edges']            ?? ''),
-            'Periwound: '. ($body['periwound_condition'] ?? ''),
-            'Confidence: '.($body['confidence']      ?? 'Medium'),
+            $body['wound_bed']  ?? '',
+            'Edges: '      . ($body['edges']       ?? ''),
+            'Periwound: '  . ($body['periwound_condition'] ?? ''),
+            $healing ? "Healing Stage: $healing" : '',
+            'AI Confidence: ' . ($body['confidence'] ?? 'Medium'),
         ]))) ?: null;
         $summary = trim($body['clinical_summary'] ?? '') ?: null;
 
@@ -198,21 +212,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 granulation_percent, slough_percent, eschar_percent, epithelialization_percent,
                 exudate_amount, exudate_type, drainage_type,
                 periwound_condition, odor_present,
+                signs_of_infection, treatments_provided,
                 clinician_assessment, clinician_plan, assessment_type, created_at)
-             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'Mobile AI',NOW())"
+             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'Mobile AI',NOW())"
         );
         if (!$stmt) {
             error_log("save_assessment prepare error: " . $conn->error);
             echo json_encode(['success' => false, 'message' => 'DB prepare error: ' . $conn->error]);
             exit;
         }
+        // Type string: ii=wound/patient, s=date, dddd=measurements, iiii=tissue%, sssssssss=strings (9)
         $stmt->bind_param(
-            "iisddddiiiissssssss",
+            "iisddddiiiisssssssss",
             $wound_id, $patient_id_a, $adate,
             $len, $wid, $dep, $area,
             $gran, $slou, $necr, $epit,
             $exu_amt, $exu_type, $exu_type,
             $periwound, $odor,
+            $infect_str, $tx_str,
             $bed_notes, $summary
         );
         if (!$stmt->execute()) {
