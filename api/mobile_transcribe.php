@@ -38,10 +38,13 @@ if (strpos($audio_data, ',') !== false) {
 }
 
 // Allowed audio MIME types Gemini supports
-$allowed_mimes = ['audio/wav','audio/mp3','audio/mpeg','audio/ogg','audio/m4a',
+// Normalise m4a → mp4 (Gemini requires audio/mp4 for MPEG-4 AAC files)
+if (strtolower($audio_mime) === 'audio/m4a') $audio_mime = 'audio/mp4';
+
+$allowed_mimes = ['audio/wav','audio/mp3','audio/mpeg','audio/ogg','audio/mp4',
                   'audio/aac','audio/flac','audio/webm','audio/aiff'];
 if (!in_array(strtolower($audio_mime), $allowed_mimes)) {
-    $audio_mime = 'audio/m4a';
+    $audio_mime = 'audio/mp4'; // safe default
 }
 
 $api_key = defined('GEMINI_API_KEY') ? GEMINI_API_KEY : getenv('GEMINI_API_KEY');
